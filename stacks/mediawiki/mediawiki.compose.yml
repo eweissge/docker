@@ -17,7 +17,7 @@ services:
       TZ: America/Detroit
     volumes:
       - /var/www/html/images
-      - ./wiki/LocalSettings.php:/var/www/html/LocalSettings.php
+      - ./LocalSettings.php:/var/www/html/LocalSettings.php
     ports:
       - 8080:80
     links:
