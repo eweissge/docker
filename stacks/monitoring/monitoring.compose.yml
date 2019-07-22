@@ -1,0 +1,41 @@
+version: '3'
+services:
+  portainer:
+    image: portainer/portainer
+    container_name: portainer
+    restart: unless-stopped
+    environment:
+      TZ: America/Detroit
+    ports:
+      - 9999:9000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  netdata:
+    image: netdata/netdata
+    container_name: netdata
+    restart: unless-stopped
+    environment:
+      TZ: America/Detroit
+    ports:
+      - 19999:19999
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - apparmor:unconfined
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+  watchtower:
+    image: v2tec/watchtower
+    container_name: watchtower
+    restart: unless-stopped
+    volumes: 
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  adminer:
+    image: adminer
+    container_name: adminer
+    restart: unless-stopped
+    ports:
+      - 8081:8080

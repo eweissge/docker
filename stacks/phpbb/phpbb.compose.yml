@@ -1,0 +1,41 @@
+version: '3'
+services:
+  phpbbdb:
+    image: bitnami/mariadb
+    container_name: phpbbdb
+    restart: unless-stopped
+    env_file:
+      - ./env/phpbbdb.env
+    environment:
+      TZ: America/Detroit
+      MARIADB_DATABASE: bitnami_phpbb
+      MARIADB_USER: bn_phpbb
+      ALLOW_EMPTY_PASSWORD: 'yes'
+    volumes:
+      - /opt/code/cont/mysql/volumes/phpbbdb:/bitnami
+
+  phpbb:
+    image: bitnami/phpbb
+    container_name: phpbb
+    restart: unless-stopped
+    env_file:
+      - ./env/phpbb.env
+    environment:
+      ALLOW_EMPTY_PASSWORD: 'yes'
+      MARIADB_HOST: phpbbdb
+    volumes:
+      - /opt/code/cont/mysql/volumes/phpbb:/bitnami
+    ports:
+      - 80:80
+      - 443:443
+    links:
+      - phpbbdb
+    depends_on:
+      - phpbbdb
+
+  adminer:
+    image: adminer
+    container_name: adminer
+    restart: unless-stopped
+    ports:
+      - 8081:8080
