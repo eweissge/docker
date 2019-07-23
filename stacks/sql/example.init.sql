@@ -1,0 +1,40 @@
+CREATE DATABASE IF NOT EXISTS login;
+USE login;
+CREATE TABLE IF NOT EXISTS users(
+	userid INT NOT NULL UNIQUE AUTO_INCREMENT,
+	AccountName NVARCHAR(50),
+	username VARCHAR(25) NOT NULL,
+	email VARCHAR(50) NOT NULL UNIQUE,
+	phone VARCHAR(10),
+	FirstName NVARCHAR(100),
+	LastName NVARCHAR(100),
+	Photo VARBINARY(200),
+	Address1 NVARCHAR(50),
+	Address2 NVARCHAR(50),
+	City NVARCHAR(50),
+	State NVARCHAR(2),
+	Zip NVARCHAR(10),
+	Active BIT NOT NULL DEFAULT 0,
+	CreatedDate DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+/*CREATE TABLE IF NOT EXISTS */
+
+INSERT INTO users VALUES (
+	NULL,
+	"JohnDoe",
+	"JohnDoe",
+	"JohnDoe@example.com",
+	"1234567890",
+	"John",
+	"Doe",
+	NULL,
+	"123 Example St",
+	NULL,
+	"Somecity",
+	"ST",
+	"12345",
+	1,
+	CURRENT_TIMESTAMP
+);
+

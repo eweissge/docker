@@ -2,3 +2,4 @@
 /home/eric/docker/volumes
 /home/eric/docker/stacks/phpbb/env/prod.phpbb.env
 /home/eric/docker/stacks/phpbb/env/prod.phpbbdb.env
+/home/eric/docker/stacks/sql/prod.init.sql

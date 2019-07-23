@@ -1,0 +1,59 @@
+version: '3'
+
+services:
+  db:
+#   image: mysql
+    image: mariadb:latest
+    container_name: db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      TZ: America/Detroit
+    ports:
+      - 3306:3306
+    command: --init-file /data/application/example.init.sql
+    volumes:
+      - ./sql/example.init.sql:/data/application/example.init.sql
+
+  adminer:
+    image: adminer:latest
+    container_name: adminer
+    restart: unless-stopped
+    ports:
+      - 8080:8080
+
+  php:
+    image: php:7.2-fpm
+    container_name: php
+    restart: unless-stopped
+#    command: docker-php-ext-install pdo pdo_mysql
+#        docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd \ 
+#        && docker-php-ext-configure mysqli --with-mysqli=mysqlnd \
+    build:
+      context: ./php
+      dockerfile: Dockerfile
+    environment:
+      TZ: America/Detroit 
+    volumes:
+      - /home/eric/docker/volumes/webpage:/usr/share/nginx/html
+      - ./php/tz.ini:/usr/local/etc/php/conf.d/tz.ini
+    ports:
+      - 9000:9000
+    links:
+      - db
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    restart: unless-stopped
+    environment:
+      TZ: America/Detroit
+    ports: 
+      - 80:80
+    volumes:
+      - /home/eric/docker/volumes/webpage:/usr/share/nginx/html
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/sites/:/etc/nginx/sites-available
+      - ./nginx/conf.d/:/etc/nginx/conf.d
+    depends_on:
+      - php
