@@ -1,0 +1,34 @@
+version: '3'
+services:
+  db:
+    image: mariadb
+    container_name: db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      TZ: America/Detroit
+    ports:
+      - 3306:3306
+
+  node:
+    image: node
+    container_name: nodejs
+    restart: unless-stopped
+    user: "node"
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - /home/eric/docker/volumes/nodejs:/home/node/app
+    ports:
+      - 8081:8081
+    command: "npm start"
+    links:
+      - db
+
+  adminer:
+    image: adminer
+    container_name: adminer
+    restart: unless-stopped
+    ports:
+      - 8080:8080
