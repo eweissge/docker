@@ -1,0 +1,15 @@
+version: "2"
+services:
+  deluge:
+    image: linuxserver/deluge
+    container_name: deluge
+    restart: unless-stopped
+    network_mode: host
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - UMASK_SET=022
+      - TZ=timezone
+    volumes:
+      - /home/eric/docker/volumes/deluge/config:/config
+      - /home/eric/docker/volumes/deluge/downloads:/downloads
