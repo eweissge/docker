@@ -5,26 +5,27 @@ services:
     container_name: phpbbdb
     restart: unless-stopped
     env_file:
-      - ./env/phpbbdb.env
+      - ./env/example.phpbbdb.env
     environment:
       TZ: America/Detroit
       MARIADB_DATABASE: bitnami_phpbb
       MARIADB_USER: bn_phpbb
       ALLOW_EMPTY_PASSWORD: 'yes'
+    # Volume must be writable by other users o+w
     volumes:
-      - /opt/code/cont/mysql/volumes/phpbbdb:/bitnami
+      - /home/eric/docker/volumes/phpbbdb:/bitnami
 
   phpbb:
     image: bitnami/phpbb
     container_name: phpbb
     restart: unless-stopped
     env_file:
-      - ./env/phpbb.env
+      - ./env/example.phpbb.env
     environment:
       ALLOW_EMPTY_PASSWORD: 'yes'
       MARIADB_HOST: phpbbdb
     volumes:
-      - /opt/code/cont/mysql/volumes/phpbb:/bitnami
+      - /home/eric/docker/volumes/phpbb:/bitnami
     ports:
       - 80:80
       - 443:443
