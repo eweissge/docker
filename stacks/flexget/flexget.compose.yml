@@ -1,0 +1,18 @@
+version: '3'
+services:
+  flexget:
+    image: cpoppema/docker-flexget
+    container_name: flexget
+    restart: unless-stopped
+    environment:
+      TZ: America/Detroit
+      PGID: 1000
+      PUID: 1000
+      WEB_PASSWD: example
+      TORRENT_PLUGIN: transmission
+      FLEXGET_LOG_LEVEL: debug
+    volumes:
+      - /home/eric/docker/volumes/flexget/config:/config
+      - /home/eric/docker/volumes/flexget/downloads:/downloads
+    ports:
+      - 5050:5050
