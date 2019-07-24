@@ -8,8 +8,10 @@ services:
       TZ: America/Detroit
       PGID: 1000
       PUID: 1000
-      WEB_PASSWD: example
-      TORRENT_PLUGIN: transmission
+#      WEB_SERVER: 'yes'
+      WEB_PASSWD: FlexgetExample1!
+#      TORRENT_PLUGIN: transmission
+      TORRENT_PLUGIN: deluge-common
       FLEXGET_LOG_LEVEL: debug
     volumes:
       - /home/eric/docker/volumes/flexget/config:/config
