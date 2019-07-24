@@ -1,0 +1,16 @@
+version: '2'
+services:
+  cloud9:
+    image: linuxserver/cloud9
+    container_name: cloud9
+    restart: unless-stopped
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: Europe/London
+      GITURL: https://github.com/linuxserver/docker-cloud9.git
+    volumes:
+      - /home/eric/docker/volumes/cloud9/code:/code
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - 8000:8000
