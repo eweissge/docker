@@ -9,7 +9,9 @@ services:
       - PUID=1000
       - PGID=1000
       - UMASK_SET=022
-      - TZ=timezone
+      - TZ=America/Detroit
     volumes:
       - /home/eric/docker/volumes/deluge/config:/config
       - /home/eric/docker/volumes/deluge/downloads:/downloads
+    ports:
+      - 8112:8112
