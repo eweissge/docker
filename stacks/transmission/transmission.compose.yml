@@ -12,7 +12,7 @@ services:
     volumes:
       - /home/eric/docker/volumes/transmission/config:/config
       - /home/eric/docker/volumes/transmission/downloads:/downloads
-      - /home/eric/docker/volumes/tranmission/watch:/watch
+      - /home/eric/docker/volumes/transmission/watch:/watch
     ports:
       - 9091:9091
       - 51413:51413
