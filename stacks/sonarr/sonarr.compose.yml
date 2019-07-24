@@ -1,0 +1,17 @@
+version: '2'
+services:
+  sonarr:
+    image: linuxserver/sonarr
+    container_name: sonarr
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Detroit
+      - UMASK_SET=022 #optional
+    volumes:
+      - /home/eric/docker/volumes/sonarr/config:/config
+      - /home/eric/docker/volumes/sonarr/tv:/tv
+      - /home/eric/docker/volumes/sonarr/downloads:/downloads
+    ports:
+      - 8989:8989
