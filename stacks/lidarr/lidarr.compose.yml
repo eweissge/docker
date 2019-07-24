@@ -1,0 +1,17 @@
+version: "2"
+services:
+  lidarr:
+    image: linuxserver/lidarr
+    container_name: lidarr
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Detroit
+      - UMASK_SET=022 #optional
+    volumes:
+      - /home/eric/docker/volumes/lidarr/config:/config
+      - /home/eric/docker/volumes/lidarr/music/:/music
+      - /home/eric/docker/volumes/lidarr/downloads:/downloads
+    ports:
+      - 8686:8686

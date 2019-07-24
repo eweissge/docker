@@ -1,0 +1,16 @@
+version: "2"
+services:
+  photoshow:
+    image: linuxserver/photoshow
+    container_name: photoshow
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Detroit
+    volumes:
+      - /home/eric/docker/volumes/photoshow/config:/config
+      - /home/eric/docker/volumes/photoshow/pictures:/Pictures:ro
+      - /home/eric/docker/volumes/photoshow/Thumbs:/Thumbs
+    ports:
+      - 80:80
