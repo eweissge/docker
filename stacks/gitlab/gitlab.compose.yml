@@ -1,4 +1,4 @@
-version: '3'
+version: '2'
 services:
   gitlab:
     image: 'gitlab/gitlab-ce:latest'
