@@ -15,23 +15,26 @@ services:
     image: netdata/netdata
     container_name: netdata
     restart: unless-stopped
+    cap_add:
+      - SYS_PTRACE
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys/:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
     environment:
       TZ: America/Detroit
     ports:
       - 19999:19999
-    cap_add:
-      - SYS_PTRACE
     security_opt:
       - apparmor:unconfined
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro
 
   watchtower:
-    image: v2tec/watchtower
+    image: v2tec/watchtower:armhf-latest
     container_name: watchtower
     restart: unless-stopped
-    volumes: 
+    volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 30
 
   adminer:
     image: adminer

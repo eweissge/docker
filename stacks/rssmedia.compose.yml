@@ -11,26 +11,12 @@ services:
       - UMASK_SET=022 #optional
     volumes:
       - /home/eric/docker/volumes/bazarr/config:/config
-      - /home/eric/docker/volumes/bazarr/movies:/movies
-      - /home/eric/docker/volumes/bazarr/tv:/tv
+#      - /home/eric/docker/volumes/bazarr/movies:/movies
+      - /media/orion/Tosh3.0/Movies:/movies
+#      - /home/eric/docker/volumes/bazarr/tv:/tv
+      - /media/orion/Tosh3.0/TV:/tv
     ports:
       - 6767:6767
-
-  deluge:
-    image: linuxserver/deluge
-    container_name: deluge
-    restart: unless-stopped
-    network_mode: host
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - UMASK_SET=022
-      - TZ=America/Detroit
-    volumes:
-      - /home/eric/docker/volumes/deluge/config:/config
-      - /home/eric/docker/volumes/deluge/downloads:/downloads
-    ports:
-      - 8112:8112
 
   lidarr:
     image: linuxserver/lidarr
@@ -44,6 +30,7 @@ services:
     volumes:
       - /home/eric/docker/volumes/lidarr/config:/config
       - /home/eric/docker/volumes/lidarr/music/:/music
+#      - /media/orion/Seagate3.0/Music
       - /home/eric/docker/volumes/lidarr/downloads:/downloads
     ports:
       - 8686:8686
@@ -59,8 +46,10 @@ services:
       - UMASK_SET=022 #optional
     volumes:
       - /home/eric/docker/volumes/radarr/config:/config
-      - /home/eric/docker/volumes/radarr/movies:/movies
-      - /home/eric/docker/volumes/radarr/downloads:/downloads
+      #- /home/eric/docker/volumes/radarr/movies:/movies
+      - /media/orion/Tosh3.0/Movies:/movies
+      #- /home/eric/docker/volumes/radarr/downloads:/downloads
+      - /media/orion/Venus/downloads:/downloads
     ports:
       - 7878:7878
 
@@ -75,8 +64,11 @@ services:
       - UMASK_SET=022 #optional
     volumes:
       - /home/eric/docker/volumes/sonarr/config:/config
-      - /home/eric/docker/volumes/sonarr/tv:/tv
-      - /home/eric/docker/volumes/sonarr/downloads:/downloads
+      #- /home/eric/docker/volumes/sonarr/tv:/tv
+      - /media/orion/Tosh3.0/TV:/tv
+      #- /home/eric/docker/volumes/sonarr/downloads:/downloads
+ #     - /media/orion/mercury/downloads:/downloads
+      - /media/orion/Venus/downloads:/downloads
     ports:
       - 8989:8989
 
@@ -91,9 +83,29 @@ services:
       TRANSMISSION_WEB_HOME: /combustion-release/
     volumes:
       - /home/eric/docker/volumes/transmission/config:/config
-      - /home/eric/docker/volumes/transmission/downloads:/downloads
+      - /opt/docker/docker/stacks/transmission/settings.json:/config/settings.json
+      #- /home/eric/docker/volumes/transmission/downloads:/downloads
+      - /media/orion/Venus/downloads:/downloads
       - /home/eric/docker/volumes/transmission/watch:/watch
     ports:
       - 9091:9091
       - 51413:51413
       - 51413:51413/udp
+
+  deluge:
+    image: linuxserver/deluge
+    container_name: deluge
+    restart: unless-stopped
+    network_mode: host
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - UMASK_SET=022
+      - TZ=America/Detroit
+    volumes:
+      - /home/eric/docker/volumes/deluge/config:/config
+      #- /home/eric/docker/volumes/deluge/downloads:/downloads
+      - /media/orion/Venus/downloads:/downloads
+    ports:
+      - 8112:8112
+
