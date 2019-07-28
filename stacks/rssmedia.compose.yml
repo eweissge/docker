@@ -10,10 +10,11 @@ services:
       - TZ=America/Detroit
       - UMASK_SET=022 #optional
     volumes:
-      - /home/eric/docker/volumes/bazarr/config:/config
+#      - /home/eric/docker/volumes/bazarr/config:/config
 #      - /home/eric/docker/volumes/bazarr/movies:/movies
-      - /media/orion/Tosh3.0/Movies:/movies
 #      - /home/eric/docker/volumes/bazarr/tv:/tv
+      - /opt/docker/volumes/bazarr/config:/config
+      - /media/orion/Tosh3.0/Movies:/movies
       - /media/orion/Tosh3.0/TV:/tv
     ports:
       - 6767:6767
@@ -28,10 +29,13 @@ services:
       - TZ=America/Detroit
       - UMASK_SET=022 #optional
     volumes:
-      - /home/eric/docker/volumes/lidarr/config:/config
-      - /home/eric/docker/volumes/lidarr/music/:/music
+#      - /home/eric/docker/volumes/lidarr/config:/config
+#      - /home/eric/docker/volumes/lidarr/music/:/music
 #      - /media/orion/Seagate3.0/Music
-      - /home/eric/docker/volumes/lidarr/downloads:/downloads
+#      - /home/eric/docker/volumes/lidarr/downloads:/downloads
+      - /opt/docker/volumes/bazarr/config:/config
+      - /opt/docker/volumes/lidarr/music:/music
+      - /opt/docker/volumes/lidarr/downloads:/downloads
     ports:
       - 8686:8686
 
@@ -45,10 +49,11 @@ services:
       - TZ=America/Detroit
       - UMASK_SET=022 #optional
     volumes:
-      - /home/eric/docker/volumes/radarr/config:/config
+      #- /home/eric/docker/volumes/radarr/config:/config
       #- /home/eric/docker/volumes/radarr/movies:/movies
-      - /media/orion/Tosh3.0/Movies:/movies
       #- /home/eric/docker/volumes/radarr/downloads:/downloads
+      - /opt/docker/volumes/radarr/config:/config
+      - /media/orion/Tosh3.0/Movies:/movies
       - /media/orion/Venus/downloads:/downloads
     ports:
       - 7878:7878
@@ -63,11 +68,12 @@ services:
       - TZ=America/Detroit
       - UMASK_SET=022 #optional
     volumes:
-      - /home/eric/docker/volumes/sonarr/config:/config
+      #- /home/eric/docker/volumes/sonarr/config:/config
       #- /home/eric/docker/volumes/sonarr/tv:/tv
-      - /media/orion/Tosh3.0/TV:/tv
       #- /home/eric/docker/volumes/sonarr/downloads:/downloads
  #     - /media/orion/mercury/downloads:/downloads
+      - /opt/docker/volumes/sonarr/config:/config
+      - /media/orion/Tosh3.0/TV:/tv
       - /media/orion/Venus/downloads:/downloads
     ports:
       - 8989:8989
@@ -82,11 +88,13 @@ services:
       TZ: America/Detroit
       TRANSMISSION_WEB_HOME: /combustion-release/
     volumes:
-      - /home/eric/docker/volumes/transmission/config:/config
-      - /opt/docker/docker/stacks/transmission/settings.json:/config/settings.json
+      #- /home/eric/docker/volumes/transmission/config:/config
       #- /home/eric/docker/volumes/transmission/downloads:/downloads
+      #- /home/eric/docker/volumes/transmission/watch:/watch
+      - /opt/docker/volumes/transmission/config:/config
+      - /opt/docker/docker/stacks/transmission/settings.json:/config/settings.json
       - /media/orion/Venus/downloads:/downloads
-      - /home/eric/docker/volumes/transmission/watch:/watch
+      - /opt/docker/volumes/transmission/watch:/watch
     ports:
       - 9091:9091
       - 51413:51413
@@ -103,8 +111,9 @@ services:
       - UMASK_SET=022
       - TZ=America/Detroit
     volumes:
-      - /home/eric/docker/volumes/deluge/config:/config
+      #- /home/eric/docker/volumes/deluge/config:/config
       #- /home/eric/docker/volumes/deluge/downloads:/downloads
+      - /opt/docker/volumes/deluge/config:/config
       - /media/orion/Venus/downloads:/downloads
     ports:
       - 8112:8112
