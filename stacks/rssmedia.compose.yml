@@ -91,8 +91,8 @@ services:
       #- /home/eric/docker/volumes/transmission/config:/config
       #- /home/eric/docker/volumes/transmission/downloads:/downloads
       #- /home/eric/docker/volumes/transmission/watch:/watch
+      #- /opt/docker/docker/stacks/transmission/settings.json:/config/settings.json
       - /opt/docker/volumes/transmission/config:/config
-      - /opt/docker/docker/stacks/transmission/settings.json:/config/settings.json
       - /media/orion/Venus/downloads:/downloads
       - /opt/docker/volumes/transmission/watch:/watch
     ports:

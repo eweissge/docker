@@ -7,10 +7,10 @@ services:
     environment:
       PUID: 1000
       PGID: 1000
-      TZ: Europe/London
+      TZ: America/Detroit
       GITURL: https://github.com/linuxserver/docker-cloud9.git
     volumes:
-      - /home/eric/docker/volumes/cloud9/code:/code
+      - /opt/docker/volumes/cloud9/code:/code
       - /var/run/docker.sock:/var/run/docker.sock
     ports:
-      - 8000:8000
+      - 8888:8000
