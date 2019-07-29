@@ -12,6 +12,6 @@ services:
       - '8929:8929'
       - '2224:22'
     volumes:
-      - '/home/eric/docker/volumes/gitlab/config:/etc/gitlab'
-      - '/home/eric/docker/volumes/gitlab/logs:/var/log/gitlab'
-      - '/home/eric/docker/volumes/gitlab/data:/var/opt/gitlab'
+      - '/opt/docker/volumes/gitlab/config:/etc/gitlab'
+      - '/opt/docker/volumes/gitlab/logs:/var/log/gitlab'
+      - '/opt/docker/volumes/gitlab/data:/var/opt/gitlab'

@@ -19,13 +19,13 @@ services:
       - MAIL_FROM_NAME=John Doe
       - MAIL_ENCRYPTION=TLS
       - MAIL_USERNAME=USERNAME@gmail.com
-      - MAIL_PASSWORD=password
+      - MAIL_PASSWORD=PASSWORD
       - AKAUNTING_URL=http://localhost:10080
       - AKAUNTING_COMPANY_NAME=YOUR COMPANY
       - AKAUNTING_COMPANY_EMAIL=COMPANY@YOURDOMAIN.COM
-      - AKAUNTING_ADMIN_EMAIL=
+      - AKAUNTING_ADMIN_EMAIL=USERNAME@gmail.com
       - AKAUNTING_ADMIN_PASSWORD=PASSWORD
-      - AKAUNTING_BACKUPS_EXPIREY=0
+      - AKAUNTING_BACKUPS_EXPIRY=0
     depends_on:
       - mysql
     volumes:
@@ -37,7 +37,7 @@ services:
     restart: unless-stopped
     environment:
       - DB_USER=akaunting
-      - DB_PASS=akaunting
+      - DB_PASS=password
       - DB_NAME=akaunting_db
     volumes:
       - /opt/docker/volumes/akaunting/mysql:/var/lib/mysql
