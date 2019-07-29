@@ -11,7 +11,11 @@ services:
       - UMASK_SET=022 #optional
     volumes:
       - /home/eric/docker/volumes/sonarr/config:/config
-      - /home/eric/docker/volumes/sonarr/tv:/tv
-      - /home/eric/docker/volumes/sonarr/downloads:/downloads
+      - /media/orion/Tosh3.0/TV:/tv
+      - /media/orion/Jupiter/archive.tv:/tv.archive
+      - /media/orion/Seagate3.0/Classic.tv:/tv.classic
+      - /media/orion/Venus/downloads:/downloads
+      #- /home/eric/docker/volumes/sonarr/tv:/tv
+      #- /home/eric/docker/volumes/sonarr/downloads:/downloads
     ports:
       - 8989:8989

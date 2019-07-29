@@ -10,8 +10,11 @@ services:
       - TZ=America/Detroit
       - UMASK_SET=022 #optional
     volumes:
-      - /home/eric/docker/volumes/radarr/config:/config
-      - /home/eric/docker/volumes/radarr/movies:/movies
-      - /home/eric/docker/volumes/radarr/downloads:/downloads
+      - /opt/docker/volumes/radarr/config:/config
+      - /media/orion/Tosh3.0/Movies:/movies
+      - /media/orion/Seagate3.0/Classics:/movies.classics
+      - /media/orion/Venus/downloads:/downloads
+      #- /opt/docker/volumes/radarr/movies:/movies
+      #- /opt/docker/volumes/radarr/downloads:/downloads
     ports:
       - 7878:7878
