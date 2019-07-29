@@ -16,6 +16,9 @@ services:
       - /opt/docker/volumes/bazarr/config:/config
       - /media/orion/Tosh3.0/Movies:/movies
       - /media/orion/Tosh3.0/TV:/tv
+      - /media/orion/Jupiter/archive.tv:/tv.archive
+      - /media/orion/Seagate3.0/Classic.tv:/tv.classic
+      - /media/orion/Seagate3.0/Classics:/movies.classics
     ports:
       - 6767:6767
 
@@ -54,6 +57,7 @@ services:
       #- /home/eric/docker/volumes/radarr/downloads:/downloads
       - /opt/docker/volumes/radarr/config:/config
       - /media/orion/Tosh3.0/Movies:/movies
+      - /media/orion/Seagate3.0/Classics:/movies/classics
       - /media/orion/Venus/downloads:/downloads
     ports:
       - 7878:7878
@@ -74,6 +78,8 @@ services:
  #     - /media/orion/mercury/downloads:/downloads
       - /opt/docker/volumes/sonarr/config:/config
       - /media/orion/Tosh3.0/TV:/tv
+      - /media/orion/Jupiter/archive.tv:/tv.archive
+      - /media/orion/Seagate/Classic.tv:/tv.classic
       - /media/orion/Venus/downloads:/downloads
     ports:
       - 8989:8989
