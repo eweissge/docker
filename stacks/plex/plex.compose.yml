@@ -1,0 +1,21 @@
+version: '2'
+services:
+  plex:
+    image: linuxserver/plex
+    container_name: plex
+    restart: unless-stopped
+    network_mode: host
+    environment:
+      PUID: 1000
+      GUID: 1000
+      VERSION: docker
+    volumes:
+      - /opt/docker/volumes/plex/config:/config
+      - /media/orion/Tosh3.0/TV:/data/tv
+      - /media/orion/Jupiter/archive.tv:/data/tv.archive
+      - /media/orion/Seagate3.0/Classic.tv:/data/tv.classic
+      - /media/orion/Tosh3.0/Movies:/data/movies
+      - /media/orion/Seagate3.0/Classics:/data/movies.classics
+      - /opt/docker/volumes/plex/transcode:/transcode
+    ports:
+      - 32400:32400

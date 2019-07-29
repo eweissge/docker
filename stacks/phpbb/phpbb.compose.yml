@@ -35,10 +35,3 @@ services:
       - phpbbdb
     depends_on:
       - phpbbdb
-
-  adminer:
-    image: adminer
-    container_name: adminer
-    restart: unless-stopped
-    ports:
-      - 8081:8080

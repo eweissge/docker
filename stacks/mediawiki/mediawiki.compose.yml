@@ -22,10 +22,3 @@ services:
       - 8080:80
     links:
       - db
-
-  adminer:
-    image: adminer
-    container_name: adminer
-    restart: unless-stopped
-    ports:
-      - 8081:8080

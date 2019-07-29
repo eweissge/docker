@@ -1,0 +1,15 @@
+version: '2'
+services:
+  ombi:
+    image: linuxserver/ombi
+    container_name: ombi
+    restart: unless-stopped
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: America/Detroit
+      BASE_URL: /ombi
+    volumes:
+      - /opt/docker/volumes/ombi/config:/config
+    ports:
+      - 3579:3579
