@@ -22,26 +22,6 @@ services:
     ports:
       - 6767:6767
 
-  lidarr:
-    image: linuxserver/lidarr
-    container_name: lidarr
-    restart: unless-stopped
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=America/Detroit
-      - UMASK_SET=022 #optional
-    volumes:
-#      - /home/eric/docker/volumes/lidarr/config:/config
-#      - /home/eric/docker/volumes/lidarr/music/:/music
-#      - /media/orion/Seagate3.0/Music
-#      - /home/eric/docker/volumes/lidarr/downloads:/downloads
-      - /opt/docker/volumes/bazarr/config:/config
-      - /opt/docker/volumes/lidarr/music:/music
-      - /opt/docker/volumes/lidarr/downloads:/downloads
-    ports:
-      - 8686:8686
-
   radarr:
     image: linuxserver/radarr
     container_name: radarr
@@ -61,6 +41,26 @@ services:
       - /media/orion/Venus/downloads:/downloads
     ports:
       - 7878:7878
+
+  lidarr:
+    image: linuxserver/lidarr
+    container_name: lidarr
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Detroit
+      - UMASK_SET=022 #optional
+    volumes:
+#      - /home/eric/docker/volumes/lidarr/config:/config
+#      - /home/eric/docker/volumes/lidarr/music/:/music
+#      - /media/orion/Seagate3.0/Music
+#      - /home/eric/docker/volumes/lidarr/downloads:/downloads
+      - /opt/docker/volumes/bazarr/config:/config
+      - /opt/docker/volumes/lidarr/music:/music
+      - /opt/docker/volumes/lidarr/downloads:/downloads
+    ports:
+      - 8686:8686
 
   sonarr:
     image: linuxserver/sonarr
@@ -102,7 +102,8 @@ services:
       - /media/orion/Venus/downloads:/downloads
       - /opt/docker/volumes/transmission/watch:/watch
     ports:
-      - 9091:9091
+      #- 9091:9091
+      - 9090:9091
       - 51413:51413
       - 51413:51413/udp
 
