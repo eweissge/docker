@@ -13,7 +13,8 @@ services:
       ALLOW_EMPTY_PASSWORD: 'yes'
     # Volume must be writable by other users o+w
     volumes:
-      - /home/eric/docker/volumes/phpbbdb:/bitnami
+      #- /home/eric/docker/volumes/phpbbdb:/bitnami
+      - /opt/docker/volumes/phpbbdb:/bitnami
 
   phpbb:
     image: bitnami/phpbb
@@ -25,10 +26,11 @@ services:
       ALLOW_EMPTY_PASSWORD: 'yes'
       MARIADB_HOST: phpbbdb
     volumes:
-      - /home/eric/docker/volumes/phpbb:/bitnami
+      #- /home/eric/docker/volumes/phpbb:/bitnami
+      - /opt/docker/volumes/phpbb:/bitnami
     ports:
-      - 80:80
-      - 443:443
+      - 82:80
+      - 4443:443
     links:
       - phpbbdb
     depends_on:
