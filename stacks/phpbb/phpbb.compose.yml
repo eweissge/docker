@@ -13,7 +13,7 @@ services:
       ALLOW_EMPTY_PASSWORD: 'yes'
     # Volume must be writable by other users o+w
     volumes:
-      #- /home/eric/docker/volumes/phpbbdb:/bitnami
+      # Must be owned by user 1001:1001
       - /opt/docker/volumes/phpbbdb:/bitnami
 
   phpbb:
@@ -30,7 +30,7 @@ services:
       - /opt/docker/volumes/phpbb:/bitnami
     ports:
       - 82:80
-      - 4443:443
+      - 4433:443
     links:
       - phpbbdb
     depends_on:
