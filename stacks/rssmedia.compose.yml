@@ -93,7 +93,8 @@ services:
       - UMASK_SET=022 #optional
     volumes:
       - /opt/docker/volumes/bazarr/config:/config
-      - /opt/docker/volumes/lidarr/music:/music
+      #- /opt/docker/volumes/lidarr/music:/music
+      - /media/orion/Seagate3.0/Music:/music
       - /opt/docker/volumes/lidarr/downloads:/downloads
     ports:
       - 8686:8686
@@ -111,7 +112,7 @@ services:
       - /opt/docker/volumes/sonarr/config:/config
       - /media/orion/Tosh3.0/TV:/tv
       - /media/orion/Jupiter/archive.tv:/tv.archive
-      - /media/orion/Seagate/Classic.tv:/tv.classic
+      - /media/orion/Seagate3.0/Classic.tv:/tv.classic
       - /media/orion/Venus/downloads:/downloads
     ports:
       - 8989:8989
@@ -153,3 +154,37 @@ services:
     ports:
       - 8112:8112
 
+# Media Streaming
+  plex:
+    image: linuxserver/plex
+    container_name: plex
+    restart: unless-stopped
+    network_mode: host
+    environment:
+      PUID: 1000
+      GUID: 1000
+      VERSION: docker
+    volumes:
+      - /opt/docker/volumes/plex/config:/config
+      - /media/orion/Tosh3.0/TV:/data/tv
+      - /media/orion/Jupiter/archive.tv:/data/tv.archive
+      - /media/orion/Seagate3.0/Classic.tv:/data/tv.classic
+      - /media/orion/Tosh3.0/Movies:/data/movies
+      - /media/orion/Seagate3.0/Classics:/data/movies.classics
+      - /opt/docker/volumes/plex/transcode:/transcode
+    ports:
+      - 32400:32400
+
+  ombi:
+    image: linuxserver/ombi
+    container_name: ombi
+    restart: unless-stopped
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: America/Detroit
+      BASE_URL: /ombi
+    volumes:
+      - /opt/docker/volumes/ombi/config:/config
+    ports:
+      - 3579:3579
