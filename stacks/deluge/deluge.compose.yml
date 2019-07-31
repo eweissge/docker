@@ -12,6 +12,6 @@ services:
       - TZ=America/Detroit
     volumes:
       - /home/eric/docker/volumes/deluge/config:/config
-      - /home/eric/docker/volumes/deluge/downloads:/downloads
+      - /media/orion/Venus/downloads:/downloads
     ports:
       - 8112:8112
