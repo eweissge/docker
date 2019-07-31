@@ -1,17 +1,17 @@
 version: '2'
 services:
   lancache-dns:
-    image: lancachenet/lancache-dns:latest
+    image: lancachenet/lancache-dns
     container_name: lancache-dns
     restart: unless-stopped
     environment:
       - USE_GENERIC_CACHE=true
-      - LANCACHE_IP=10.42.240.135
-#    ports:
-#      - 53:53/udp
+      - LANCACHE_IP=192.168.1.8
+    ports:
+      - 53:53/udp
 
   monolithic:
-    image: lancachenet/monolithic:latest
+    image: lancachenet/monolithic
     container_name: lancache
     restart: unless-stopped
     volumes:
@@ -21,7 +21,7 @@ services:
       - 80:80
 
   sniproxy:
-    image: lancachenet/sniproxy:latest
+    image: lancachenet/sniproxy
     container_name: sniproxy
     restart: unless-stopped
     ports:
