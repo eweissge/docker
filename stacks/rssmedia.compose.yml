@@ -12,38 +12,55 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 
-  netdata:
-    image: netdata/netdata
-    container_name: netdata
-    restart: unless-stopped
-    cap_add:
-      - SYS_PTRACE
-    volumes:
-      - /proc:/host/proc:ro
-      - /sys:/host/sys/:ro
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-    environment:
-      TZ: America/Detroit
-    ports:
-      - 19999:19999
-    security_opt:
-      - apparmor:unconfined
+  # netdata:
+  #   image: netdata/netdata
+  #   container_name: netdata
+  #   restart: unless-stopped
+  #   cap_add:
+  #     - SYS_PTRACE
+  #   volumes:
+  #     - /proc:/host/proc:ro
+  #     - /sys:/host/sys/:ro
+  #     - /var/run/docker.sock:/var/run/docker.sock:ro
+  #   environment:
+  #     TZ: America/Detroit
+  #   ports:
+  #     - 19999:19999
+  #   security_opt:
+  #     - apparmor:unconfined
 
   watchtower:
-    #image: v2tec/watchtower:armhf-latest
-    image: v2tec/watchtower
+    image: v2tec/watchtower:armhf-latest
+    #image: v2tec/watchtower
     container_name: watchtower
     restart: unless-stopped
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     command: --interval 30
 
-  adminer:
-    image: adminer
-    container_name: adminer
+  # adminer:
+  #   image: adminer
+  #   container_name: adminer
+  #   restart: unless-stopped
+  #   ports:
+  #     - 8081:8080
+
+# Ebook library
+  calibre:
+    image: linuxserver/calibre-web
+    container_name: calibre
     restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Detroit
+#      - GUAC_USER=abc #optional
+#      - GUAC_PASS=900150983cd24fb0d6963f7d28e17f72 #optional
+    volumes:
+      - /opt/docker/volumes/calibre/config:/config
+      - /media/orion/Seagate3.0/Repo/Documents/Books/epub.library:/books
     ports:
-      - 8081:8080
+      - 8083:8083
 
 # RSS Services
   bazarr:
@@ -117,43 +134,6 @@ services:
     ports:
       - 8989:8989
 
-# Downloading services
-  transmission:
-    image: linuxserver/transmission
-    container_name: transmission
-    restart: unless-stopped
-    environment:
-      PUID: 1000
-      PGID: 1000
-      TZ: America/Detroit
-      TRANSMISSION_WEB_HOME: /combustion-release/
-    volumes:
-      #- /opt/docker/docker/stacks/transmission/settings.json:/config/settings.json
-      - /opt/docker/volumes/transmission/config:/config
-      - /media/orion/Venus/downloads:/downloads
-      - /opt/docker/volumes/transmission/watch:/watch
-    ports:
-      #- 9091:9091
-      - 9090:9091
-      - 51413:51413
-      - 51413:51413/udp
-
-  deluge:
-    image: linuxserver/deluge
-    container_name: deluge
-    restart: unless-stopped
-    network_mode: host
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - UMASK_SET=022
-      - TZ=America/Detroit
-    volumes:
-      - /opt/docker/volumes/deluge/config:/config
-      - /media/orion/Venus/downloads:/downloads
-    ports:
-      - 8112:8112
-
 # Media Streaming
   plex:
     image: linuxserver/plex
@@ -188,6 +168,7 @@ services:
       - /opt/docker/volumes/ombi/config:/config
     ports:
       - 3579:3579
+
 # Development services
   cloud9:
     image: linuxserver/cloud9
@@ -199,7 +180,46 @@ services:
       TZ: America/Detroit
       GITURL: https://github.com/linuxserver/docker-cloud9.git
     volumes:
-      - /opt/docker/volumes/cloud9/code:/code
+      #- /opt/docker/volumes/cloud9/code:/code
+      - /opt/docker:/code
       - /var/run/docker.sock:/var/run/docker.sock
     ports:
       - 8888:8000
+
+
+# Downloading services
+#  transmission:
+#    image: linuxserver/transmission
+#    container_name: transmission
+#    restart: unless-stopped
+#    environment:
+#      PUID: 1000
+#      PGID: 1000
+#      TZ: America/Detroit
+#      TRANSMISSION_WEB_HOME: /combustion-release/
+#    volumes:
+      #- /opt/docker/docker/stacks/transmission/settings.json:/config/settings.json
+#      - /opt/docker/volumes/transmission/config:/config
+#      - /media/orion/Venus/downloads:/downloads
+#      - /opt/docker/volumes/transmission/watch:/watch
+#    ports:
+      #- 9091:9091
+#      - 9090:9091
+#      - 51413:51413
+#      - 51413:51413/udp
+
+#  deluge:
+#    image: linuxserver/deluge
+#    container_name: deluge
+#    restart: unless-stopped
+#    network_mode: host
+#    environment:
+#      - PUID=1000
+#      - PGID=1000
+#      - UMASK_SET=022
+#      - TZ=America/Detroit
+#    volumes:
+#      - /opt/docker/volumes/deluge/config:/config
+#      - /media/orion/Venus/downloads:/downloads
+#    ports:
+#      - 8112:8112
