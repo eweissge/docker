@@ -11,31 +11,31 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 
-#  netdata:
-#    image: netdata/netdata
-#    container_name: netdata
-#    restart: unless-stopped
-#    cap_add:
-#      - SYS_PTRACE
-#    volumes:
-#      - /proc:/host/proc:ro
-#      - /sys:/host/sys/:ro
-#      - /var/run/docker.sock:/var/run/docker.sock:ro
-#    environment:
-#      TZ: America/Detroit
-#    ports:
-#      - 19999:19999
-#    security_opt:
-#      - apparmor:unconfined
+  netdata:
+    image: netdata/netdata
+    container_name: netdata
+    restart: unless-stopped
+    cap_add:
+      - SYS_PTRACE
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys/:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    environment:
+      TZ: America/Detroit
+    ports:
+      - 19999:19999
+    security_opt:
+      - apparmor:unconfined
 
-#  watchtower:
+  watchtower:
 #    image: v2tec/watchtower:armhf-latest
-#    image: v2tec/watchtower
-#    container_name: watchtower
-#    restart: unless-stopped
-#    volumes:
-#      - /var/run/docker.sock:/var/run/docker.sock
-#    command: --interval 30
+    image: v2tec/watchtower
+    container_name: watchtower
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 30
 
 #  adminer:
 #    image: adminer
@@ -224,6 +224,33 @@ services:
       - SSL_CERT=/certs/servhostname.local.crt
     networks:
       - proxy-tier
+
+  lancache-dns:
+    image: lancachenet/lancache-dns
+    container_name: lancache-dns
+    restart: unless-stopped
+    environment:
+      - USE_GENERIC_CACHE=true
+      - LANCACHE_IP=192.168.1.8
+    ports:
+      - 52:53/udp
+
+  monolithic:
+    image: lancachenet/monolithic
+    container_name: lancache
+    restart: unless-stopped
+    volumes:
+      - /opt/docker/volumes/lancache/cache:/data/cache
+      - /opt/docker/volumes/lancache/logs:/data/logs
+    ports:
+      - 80:80
+
+  sniproxy:
+    image: lancachenet/sniproxy
+    container_name: sniproxy
+    restart: unless-stopped
+    ports:
+      - 443:443
 
 volumes:
   ncdb:
