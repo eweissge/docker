@@ -2,23 +2,33 @@ version: '2'
 services:
   db:
     image: mariadb
+    container_name: db
     restart: unless-stopped
     environment:
       TZ: America/Detroit
+      MYSQL_HOST: db
       MYSQL_DATABASE: my_wiki
       MYSQL_USER: wikiuser
       MYSQL_PASSWORD: example
       MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
+#      MARIADB_DATABASE: my_wiki
+#      MARIADB_USER: wikiuser
+#      MARIADB_PASSWORD: example
 
   mediawiki:
     image: mediawiki
+    container_name: mediawiki
     restart: unless-stopped
     environment:
       TZ: America/Detroit
     volumes:
-      - /var/www/html/images
-      - ./LocalSettings.php:/var/www/html/LocalSettings.php
+      - /opt/docker/volumes/mediawiki/images:/var/www/html/images
+      # Must run first with the LocalSetting commented out, setup will generate it, then run again
+      #- /opt/docker/stacks/mediawiki/LocalSettings.php:/var/www/html/LocalSettings.php
+      - /home/eric/Downloads/LocalSettings.php:/var/www/html/LocalSettings.php
     ports:
-      - 8080:80
+      - 8088:80
     links:
+      - db
+    depends_on:
       - db
