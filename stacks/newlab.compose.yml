@@ -11,22 +11,22 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 
-  netdata:
-    image: netdata/netdata
-    container_name: netdata
-    restart: unless-stopped
-    cap_add:
-      - SYS_PTRACE
-    volumes:
-      - /proc:/host/proc:ro
-      - /sys:/host/sys/:ro
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-    environment:
-      TZ: America/Detroit
-    ports:
-      - 19999:19999
-    security_opt:
-      - apparmor:unconfined
+#  netdata:
+#    image: netdata/netdata
+#    container_name: netdata
+#    restart: unless-stopped
+#    cap_add:
+#      - SYS_PTRACE
+#    volumes:
+#      - /proc:/host/proc:ro
+#      - /sys:/host/sys/:ro
+#      - /var/run/docker.sock:/var/run/docker.sock:ro
+#    environment:
+#      TZ: America/Detroit
+#    ports:
+#      - 19999:19999
+#    security_opt:
+#      - apparmor:unconfined
 
   watchtower:
 #    image: v2tec/watchtower:armhf-latest
@@ -166,8 +166,8 @@ services:
       - MYSQL_HOST=ncdb
     env_file:
       - /opt/docker/stacks/nextcloud/db.env
-#    volumes:
-#      - /media/orion/Seagate3.0/Repo/cloud:/var/www/html
+    volumes:
+      - /media/orion/Seagate3.0/test/cloud:/var/www/html
     links:
       - ncdb
     depends_on:
@@ -231,16 +231,17 @@ services:
     restart: unless-stopped
     environment:
       - USE_GENERIC_CACHE=true
-      - LANCACHE_IP=192.168.1.8
+      - LANCACHE_IP=192.168.1.106
     ports:
-      - 52:53/udp
+      - 53:53/udp
 
   monolithic:
     image: lancachenet/monolithic
     container_name: lancache
     restart: unless-stopped
     volumes:
-      - /opt/docker/volumes/lancache/cache:/data/cache
+      #- /opt/docker/volumes/lancache/cache:/data/cache
+      - /media/orion/Seagate3.0/cache:/data/cache
       - /opt/docker/volumes/lancache/logs:/data/logs
     ports:
       - 80:80
