@@ -60,61 +60,6 @@ services:
       - '/opt/docker/volumes/gitlab/logs:/var/log/gitlab'
       - '/opt/docker/volumes/gitlab/data:/var/opt/gitlab'
 
-  akaunting:
-    image: sameersbn/akaunting:1.3.9
-    container_name: akaunting
-    restart: unless-stopped
-    command: app:akaunting
-    environment:
-      - DEBUG=true
-      - TZ=America/Detroit
-      - DB_HOST=mysql
-      - DB_USER=akaunting
-      - DB_PASS=password
-      - DB_NAME=akaunting_db
-      - MAIL_DRIVER=smtp
-      - MAIL_HOST=smtp.gmail.com
-      - MAIL_PORT=587
-      - MAIL_FROM_ADDRESS=USERNAME@gmail.com
-      - MAIL_FROM_NAME=John Doe
-      - MAIL_ENCRYPTION=TLS
-      - MAIL_USERNAME=USERNAME@gmail.com
-      - MAIL_PASSWORD=PASSWORD
-      - AKAUNTING_URL=http://localhost:10080
-      - AKAUNTING_COMPANY_NAME=YOUR COMPANY
-      - AKAUNTING_COMPANY_EMAIL=COMPANY@YOURDOMAIN.COM
-      - AKAUNTING_ADMIN_EMAIL=USERNAME@gmail.com
-      - AKAUNTING_ADMIN_PASSWORD=PASSWORD
-      - AKAUNTING_BACKUPS_EXPIRY=0
-    depends_on:
-      - mysql
-    volumes:
-      - /opt/docker/volumes/akaunting/akaunting:/var/lib/akaunting
-
-  mysql:
-    image: sameersbn/mysql:5.7.24
-    container_name: mysql_ak
-    restart: unless-stopped
-    environment:
-      - DB_USER=akaunting
-      - DB_PASS=password
-      - DB_NAME=akaunting_db
-    volumes:
-      - /opt/docker/volumes/akaunting/mysql:/var/lib/mysql
-
-  nginx:
-    image: sameersbn/akaunting:1.3.9
-    container_name: nginx_ak
-    restart: unless-stopped
-    command: app:nginx
-    environment:
-      - AKAUNTING_PHP_FPM_HOST=akaunting
-      - AKAUNTING_PHP_FPM_PORT=9000
-    depends_on:
-      - akaunting
-    ports:
-      - "10080:80"
-
   tsdb:
     image: mariadb
     container_name: tsdb
@@ -122,6 +67,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: example
       MYSQL_DATABASE: teamspeak
+    volumes:
+      - /opt/docker/volumes/teamspeakdb:/var/lib/mysql
 
   teamspeak:
     image: teamspeak
@@ -233,7 +180,7 @@ services:
       - USE_GENERIC_CACHE=true
       - LANCACHE_IP=192.168.1.106
     ports:
-      - 53:53/udp
+      - 192.168.1.106:53:53/udp
 
   monolithic:
     image: lancachenet/monolithic
@@ -244,14 +191,14 @@ services:
       - /media/orion/Seagate3.0/cache:/data/cache
       - /opt/docker/volumes/lancache/logs:/data/logs
     ports:
-      - 80:80
+      - 192.168.1.106:80:80
 
   sniproxy:
     image: lancachenet/sniproxy
     container_name: sniproxy
     restart: unless-stopped
     ports:
-      - 443:443
+      - 192.168.1.106:443:443
 
 volumes:
   ncdb:

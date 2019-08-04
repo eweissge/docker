@@ -5,6 +5,9 @@ services:
     container_name: ncdb
     restart: unless-stopped
     command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
+    volumes:
+      #- /media/orion/Seagate3.0/databases/nexcloud:/var/lib/mysql
+      - ncdb:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=example
     env_file:
@@ -19,9 +22,11 @@ services:
     env_file:
       - db.env
     volumes:
-      - /media/orion/Seagate3.0/Repo/cloud:/var/www/html
-    links:
-      - ncdb
+      #- /media/orion/Seagate3.0/Repo/cloud:/var/www/html
+      #- /media/orion/Seagate3.0/test:/var/www/html
+      - nextcloud:/var/www/html
+#    links:
+#      - ncdb
     depends_on:
       - ncdb
 
@@ -35,12 +40,13 @@ services:
       - nextcloud:/var/www/html:ro
     environment:
       - VIRTUAL_HOST=localhost
-    #volumes_from:
-      #- app
+    volumes_from:
+      - app
     depends_on:
       - app
-    ports:
-      - 8079:80
+#    ports:
+      #- 8079:80
+#      - 80:80
     networks:
       - proxy-tier
       - default
@@ -55,8 +61,10 @@ services:
       - html:/usr/share/nginx/html
       - /var/run/docker.sock:/tmp/docker.sock:ro
     ports:
+      #- 82:80
+      #- 4443:443
       - 80:80
-      - 4443:443
+      - 443:443
     networks:
       - proxy-tier
     depends_on:
@@ -65,7 +73,7 @@ services:
   omgwtfssl:
     image: paulczar/omgwtfssl
     container_name: omgwtfssl
-    restart: unless-stopped
+    restart: 'no'
     volumes:
       - certs:/certs
     environment:

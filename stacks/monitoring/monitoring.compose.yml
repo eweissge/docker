@@ -11,22 +11,22 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 
-  netdata:
-    image: netdata/netdata
-    container_name: netdata
-    restart: unless-stopped
-    cap_add:
-      - SYS_PTRACE
-    volumes:
-      - /proc:/host/proc:ro
-      - /sys:/host/sys/:ro
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-    environment:
-      TZ: America/Detroit
-    ports:
-      - 19999:19999
-    security_opt:
-      - apparmor:unconfined
+#  netdata:
+#    image: netdata/netdata
+#    container_name: netdata
+#    restart: unless-stopped
+#    cap_add:
+#      - SYS_PTRACE
+#    volumes:
+#      - /proc:/host/proc:ro
+#      - /sys:/host/sys/:ro
+#      - /var/run/docker.sock:/var/run/docker.sock:ro
+#    environment:
+#      TZ: America/Detroit
+#    ports:
+#      - 19999:19999
+#    security_opt:
+#      - apparmor:unconfined
 
   watchtower:
 #    image: v2tec/watchtower:armhf-latest
@@ -37,9 +37,9 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     command: --interval 30
 
-  adminer:
-    image: adminer
-    container_name: adminer
-    restart: unless-stopped
-    ports:
-      - 8081:8080
+#  adminer:
+#    image: adminer
+#    container_name: adminer
+#    restart: unless-stopped
+#    ports:
+#      - 8081:8080
