@@ -1,0 +1,14 @@
+version: '2'
+services:
+  urbackup:
+    image: uroni/urbackup-server
+    container_name: urbackup
+    restart: unless-stopped
+    volumes:
+      - /opt/docker/volumes/urbackup/backups:/backups
+      - /opt/docker/volumes/urbackup/database:/var/urbackup
+    ports:
+      # WebUI on port 55414
+      - 55413-55415:55413-55415
+      - 35623:35623/udp
+
