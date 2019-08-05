@@ -1,0 +1,11 @@
+version: '2'
+services:
+  hass:
+    image: homeassistant/home-assistant
+    container_name: hass
+    restart: unless-stopped
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /opt/docker/volumes/hass/config:/config
+    network_mode: host
+    #ports: 8123

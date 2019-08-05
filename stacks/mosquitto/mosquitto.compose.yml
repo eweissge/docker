@@ -1,0 +1,13 @@
+version: '2'
+services:
+  mosquitto:
+    image: eclipse-mosquitto
+    container_name: mosquitto
+    restart: unless-stopped
+    volumes:
+      - /opt/docker/stacks/mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
+      - /opt/docker/volumes/mosquitto/data:/mosquitto/data
+      - /opt/docker/volumes/mosquitto/log:/mosquitto/log
+    ports:
+      - 1883:1883
+      - 9001:9001
