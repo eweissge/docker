@@ -1,0 +1,5 @@
+# Block Google webcrawler
+
+user-agent: Googlebot
+user-agent: Adsbot-Google
+disallow: /

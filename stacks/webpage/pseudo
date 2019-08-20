@@ -1,0 +1,24 @@
+/*
+
+  Visit front page for the first anytime
+  ------------------------------
+    Create SESSION
+    Create COOKIE
+    LOGIN
+    if (Login)
+    {
+      insert cookie into database
+      Update login tracking
+    }
+    else
+    {
+      Update login tracking (failed)
+      if (failedAttempts > 3) lockAccount
+    }
+  Returning visitor
+--------------------------------
+
+  Already logged in
+--------------------------------
+
+*/

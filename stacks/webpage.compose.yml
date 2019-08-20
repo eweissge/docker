@@ -11,9 +11,10 @@ services:
       TZ: America/Detroit
     ports:
       - 3306:3306
-    command: --init-file /data/application/example.init.sql
+    #command: --init-file /data/application/example.init.sql
+    command: --init-file /data/application/init.sql
     volumes:
-      - ./sql/example.init.sql:/data/application/example.init.sql
+      - ~/init.sql:/data/application/init.sql
 
   adminer:
     image: adminer:latest
@@ -26,9 +27,8 @@ services:
     image: php:7.2-fpm
     container_name: php
     restart: unless-stopped
-#    command: docker-php-ext-install pdo pdo_mysql
-#        docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd \ 
-#        && docker-php-ext-configure mysqli --with-mysqli=mysqlnd \
+    #command: docker-php-ext-install pdo pdo_mysql
+    #command: docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd && docker-php-ext-configure mysqli --with-mysqli=mysqlnd
     build:
       context: ./php
       dockerfile: Dockerfile

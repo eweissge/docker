@@ -7,7 +7,6 @@
 	background-color: #000000;
 	border-color: #0000FF;
 	color: #0000FF;
-
 }
 
 .btn-primary:hover {
@@ -21,21 +20,6 @@
 
 .btn-primary h2 {
 	font-weight: 600;
-}
-/*
-.btn-block {
-	background-color: #00FF00;
-
-}
-
- .btn-lg {
- 	background-color: #000000;
- 	font-size: 8px;
- 	color: #FF0000;
- }
-*/
-.btn-sm h3 {
-	font-size: 16px;
 }
 
  .btn-secondary {

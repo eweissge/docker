@@ -1,0 +1,20 @@
+CACHE MANIFEST
+
+index.html
+css/favs.css
+css/ubuntu.css
+db/config.php 
+db/opendb.php 
+js/validation.js 
+lib/functions.php 
+lib/libs.php 
+lib/phpinfo.php
+php/footer.php
+php/header.php
+php/home.php
+php/index.php
+php/loginform.php
+php/login.php
+php/logout.php
+php/register.php
+php/registeruser.php
