@@ -7,6 +7,7 @@
 	}
 	catch(PDOException $e)
 	{
-		echo "Connection FAILED: " . $e->getMessage();
+		#echo "Connection FAILED: " . $e->getMessage();
+		die("Connection FAILED: " . $e->getMessage());
 	}
 ?>

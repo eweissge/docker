@@ -1,6 +1,6 @@
 <?php
 	//include_once 'header.php';
-	include 'lib/libs.php';
+	include $_SERVER["DOCUMENT_ROOT"].'/lib/libs.php';
 	$debug = false;
 
 	$username = $_POST['username'];
@@ -63,7 +63,8 @@
 				if ($debug) echo "<H1>Login Successful </H1><br/>\n";
 				func::createRecord($db, $username);
 				//func::dumpvars(['username' => $username, 'userid' => $userid, 'token' => $token, 'serialNum' => $serialNum]);
-				header("Location: home.php");
+				//header("Location: home.php");
+				header("Location: index.php");
 				//echo "<H1><a href='logout.php'>LOGOUT</H1></a><br/>\n";
 			}
 			else  // Incorrect Password

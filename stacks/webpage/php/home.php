@@ -1,5 +1,5 @@
 <?php
-  include_once 'lib/libs.php';
+  include_once $_SERVER["DOCUMENT_ROOT"].'/lib/libs.php';
   if (!func::checkLoginState($db)) echo "Not logged in <br/>\n";
   include_once "header.php";
   //print_R($_SESSION);
