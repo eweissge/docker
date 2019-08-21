@@ -9,7 +9,7 @@
   <body>
     <div class="main_page">
       <div class="page_header floating_element">
-        <a href="/pdf/resume2018.pdf"><img src="/img/me.png" class="floating_element"/></a>
+        <a target="_blank" href="/pdf/resume2018.pdf"><img src="/img/me.png" class="floating_element"/></a>
         <span class="floating_element">
           Eric Weissgerber
         </span>
@@ -63,7 +63,7 @@
       <div class="content_section_text">
         <p>
 		      If you are looking for a consultation or to employ my services, you can find my resume
-		      and qualifications <a href="/pdf/resume2018.pdf">here</a>.
+		      and qualifications <a target="_blank" href="/pdf/resume2018.pdf">here</a>.
         </p>
         <p>
 		      I enjoy astronomy, physics, debate, new technology, science fiction and wild theories.
