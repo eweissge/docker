@@ -18,8 +18,8 @@
   <!-- Bootstrap-->
   <!-- Latest compiled and minified CSS -->
   <!-- Using insecure http instead of https -->
-  <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
-  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/img/stash.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/img/stash.ico" type="image/x-icon">
   <link rel='stylesheet' type='text/css' href='/css/ubuntu.css'>
   <link rel="stylesheet" href="http://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
   integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
