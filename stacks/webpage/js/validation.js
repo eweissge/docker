@@ -8,6 +8,11 @@ function something()
   document.getElementsByName("email").value = "Hello World!";
 }
 
+function validateEmailAddress (email)
+{
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+}
+
 function addEvent(node, type, callback)
 {
   if (node.addEventListener)
@@ -28,8 +33,7 @@ function addEvent(node, type, callback)
 
 function shouldBeValidated(field)
 {
-  return
-  (
+  return (
     !(field.getAttribute("readonly") || field.readonly) &&
     !(field.getAttribute("disabled") || field.disabled) &&
     (field.getAttribute("pattern") || field.getAttribute("required"))
@@ -58,4 +62,7 @@ function instantValidation(field)
 
 // MAIN
 
-something();
+validateEmailAddress('eweissgerber@uwm.com');
+validateEmailAddress('eric@eweissgerber@uwm.com');
+
+//something();

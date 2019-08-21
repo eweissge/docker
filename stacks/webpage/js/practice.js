@@ -1,12 +1,23 @@
-function getInput() 
+function getCurrentDateString()
 {
-	prompt();
-}
+	return (new Date().toISOString() + ' :: ' + 'DEBUG :: ');
+};
 
-function logger(var data)
+function logger(msg)
 {
-	console.log(data);
-}
+	if (!msg) return;
+	console.log(getCurrentDateString() + msg);
+};
+
+function getInput()
+{
+	logger("Prompting user for name data");
+	var name = prompt("Enter your name");
+	logger(name + " received from user");
+	logger("Adding " + name + " to the Main Header");
+	document.getElementById('MainHeader').innerHTML += " " + name;
+	//logger();
+};
 
 
-logger("First logger data");
+//logger("First logger data");
