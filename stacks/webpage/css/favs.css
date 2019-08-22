@@ -21,11 +21,13 @@
 	font-weight: bold;
 }
 
-.btn-primary h2 {
+.btn-primary h2
+{
 	font-weight: 600;
 }
 
-#submit.btn-primary {
+#submit.btn-primary
+{
 	width: 15%;
 	margin: 0 auto;
 }
@@ -41,12 +43,12 @@ input.form-control
 	margin: 0 auto;
 }
 
-form.form-signin#regform {
+form.form-signin#regform
+{
 	padding-top: 3%;
 	padding-bottom: 3%;
+	/* Above lines are for vertical centering */
 	height: 75%;
-	/* display: table-cell; */
-	/* width: 20%; */
 	margin: 0 auto;
 	vertical-align: middle;
 }
