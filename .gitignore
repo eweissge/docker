@@ -1,5 +1,6 @@
-/home/eric/docker/stacks/mediawiki/LocalSettings.php
-/home/eric/docker/volumes
-/home/eric/docker/stacks/phpbb/env/prod.phpbb.env
-/home/eric/docker/stacks/phpbb/env/prod.phpbbdb.env
-/home/eric/docker/stacks/sql/prod.init.sql
+volumes
+stacks/mediawiki/LocalSettings.php
+stacks/phpbb/env/prod.phpbb.env
+stacks/phpbb/env/prod.phpbbdb.env
+stacks/sql/prod.init.sql
+stacks/sql/init.sql
