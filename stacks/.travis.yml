@@ -1,5 +1,13 @@
+sudo: 'required'
+
 services:
-  - docker
+  - 'docker'
 
 script:
-  - make test
+  - 'make test'
+
+deploy:
+  provider: script
+  script: docker login -u $DOCKER_USERNAME -p $DOCKER-PASSWORD && make push-image
+  on:
+    branch: master
