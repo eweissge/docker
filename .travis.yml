@@ -23,10 +23,10 @@ before_script:
   #- docker-compose -f stacks/compose/rssmedia.compose.yml pull;		docker-compose -f stacks/compose/rssmedia.compose.yml build;
   #- docker-compose -f stacks/compose/webpage.compose.yml pull;			docker-compose -f stacks/compose/webpage.compose.yml build;
   #- docker-compose -f stacks/compose/backup.compose.yml pull;			docker-compose -f stacks/compose/backup.compose.yml build;
-  - docker-compose -f stacks/compose/io.compose.yml pull;			docker-compose -f stacks/compose/io.compose.yml build;
+  #- docker-compose -f stacks/compose/io.compose.yml pull;			docker-compose -f stacks/compose/io.compose.yml build;
   #- docker-compose -f stacks/compose/blackhole.compose.yml pull;		docker-compose -f stacks/compose/blackhole.compose.yml build;
-  - docker-compose -f stacks/compose/newlab.compose.yml pull;			docker-compose -f stacks/compose/newlab.compose.yml build;
-  - docker-compose -f stacks/compose/mercury.compose.yml pull;			docker-compose -f stacks/compose/mercury.compose.yml build;
+  #- docker-compose -f stacks/compose/newlab.compose.yml pull;			docker-compose -f stacks/compose/newlab.compose.yml build;
+  #- docker-compose -f stacks/compose/mercury.compose.yml pull;			docker-compose -f stacks/compose/mercury.compose.yml build;
   - docker-compose -f stacks/radarr/radarr.compose.yml pull;			docker-compose -f stacks/radarr/radarr.compose.yml build;
   - docker-compose -f stacks/deluge/deluge.compose.yml pull;			docker-compose -f stacks/deluge/deluge.compose.yml build;
   - docker-compose -f stacks/photoshow/photoshow.compose.yml pull;		docker-compose -f stacks/photoshow/photoshow.compose.yml build;
