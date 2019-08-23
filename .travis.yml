@@ -21,7 +21,7 @@ before_script:
   - docker-compose -f stacks/nodejs/nodejs.compose.yml pull;			docker-compose -f stacks/nodejs/nodejs.compose.yml build;
   - docker-compose -f stacks/compose/rpi4.compose.yml pull;			docker-compose -f stacks/compose/rpi4.compose.yml build;
   - docker-compose -f stacks/compose/rssmedia.compose.yml pull;			docker-compose -f stacks/compose/rssmedia.compose.yml build;
-  - docker-compose -f stacks/compose/webpage.compose.yml pull;			docker-compose -f stacks/compose/webpage.compose.yml build;
+  #- docker-compose -f stacks/compose/webpage.compose.yml pull;			docker-compose -f stacks/compose/webpage.compose.yml build;
   - docker-compose -f stacks/compose/backup.compose.yml pull;			docker-compose -f stacks/compose/backup.compose.yml build;
   - docker-compose -f stacks/compose/io.compose.yml pull;			docker-compose -f stacks/compose/io.compose.yml build;
   - docker-compose -f stacks/compose/blackhole.compose.yml pull;		docker-compose -f stacks/compose/blackhole.compose.yml build;
@@ -57,7 +57,7 @@ script:
   - docker-compose -f stacks/nodejs/nodejs.compose.yml up;			docker-compose -f /opt/docker/stacks/nodejs/nodejs.compose.yml down;
   - docker-compose -f stacks/compose/rpi4.compose.yml up;			docker-compose -f /opt/docker/stacks/compose/rpi4.compose.yml down;
   - docker-compose -f stacks/compose/rssmedia.compose.yml up;			docker-compose -f /opt/docker/stacks/compose/rssmedia.compose.yml down;
-  - docker-compose -f stacks/compose/webpage.compose.yml up;			docker-compose -f /opt/docker/stacks/compose/webpage.compose.yml down;
+  #- docker-compose -f stacks/compose/webpage.compose.yml up;			docker-compose -f /opt/docker/stacks/compose/webpage.compose.yml down;
   - docker-compose -f stacks/compose/backup.compose.yml up;			docker-compose -f /opt/docker/stacks/compose/backup.compose.yml down;
   - docker-compose -f stacks/compose/io.compose.yml up;				docker-compose -f /opt/docker/stacks/compose/io.compose.yml down;
   - docker-compose -f stacks/compose/blackhole.compose.yml up;			docker-compose -f /opt/docker/stacks/compose/blackhole.compose.yml down;
