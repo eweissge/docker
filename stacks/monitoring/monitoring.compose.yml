@@ -4,8 +4,10 @@ services:
     image: portainer/portainer
     container_name: portainer
     restart: unless-stopped
-    environment:
-      TZ: America/Detroit
+    env_file:
+      - ./.monitoring.env
+#    environment:
+#      TZ: America/Detroit
     ports:
       - 9999:9000
     volumes:
