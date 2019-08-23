@@ -15,7 +15,7 @@ before_script:
   - docker-compose -f stacks/calibre/calibre.compose.yml pull; 			docker-compose -f stacks/calibre/calibre.compose.yml build;
   - docker-compose -f stacks/lidarr/lidarr.compose.yml pull;			docker-compose -f stacks/lidarr/lidarr.compose.yml build;
   - docker-compose -f stacks/plex/plex.compose.yml pull;			docker-compose -f stacks/plex/plex.compose.yml build;
-  - docker-compose -f stacks/transmission/transmission.compose.yml pull		docker-compose -f stacks/transmission/transmission.compose.yml build;
+  - docker-compose -f stacks/transmission/transmission.compose.yml pull;	docker-compose -f stacks/transmission/transmission.compose.yml build;
   - docker-compose -f stacks/urbackup/urbackup.compose.yml pull;		docker-compose -f stacks/urbackup/urbackup.compose.yml build;
   - docker-compose -f stacks/mediawiki/mediawiki.compose.yml pull;		docker-compose -f stacks/mediawiki/mediawiki.compose.yml build;
   - docker-compose -f stacks/nodejs/nodejs.compose.yml pull;			docker-compose -f stacks/nodejs/nodejs.compose.yml build;
