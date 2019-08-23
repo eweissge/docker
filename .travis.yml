@@ -19,12 +19,12 @@ before_script:
   - docker-compose -f stacks/urbackup/urbackup.compose.yml pull;		docker-compose -f stacks/urbackup/urbackup.compose.yml build;
   - docker-compose -f stacks/mediawiki/mediawiki.compose.yml pull;		docker-compose -f stacks/mediawiki/mediawiki.compose.yml build;
   - docker-compose -f stacks/nodejs/nodejs.compose.yml pull;			docker-compose -f stacks/nodejs/nodejs.compose.yml build;
-  - docker-compose -f stacks/compose/rpi4.compose.yml pull;			docker-compose -f stacks/compose/rpi4.compose.yml build;
-  - docker-compose -f stacks/compose/rssmedia.compose.yml pull;			docker-compose -f stacks/compose/rssmedia.compose.yml build;
+  #- docker-compose -f stacks/compose/rpi4.compose.yml pull;			docker-compose -f stacks/compose/rpi4.compose.yml build;
+  #- docker-compose -f stacks/compose/rssmedia.compose.yml pull;		docker-compose -f stacks/compose/rssmedia.compose.yml build;
   #- docker-compose -f stacks/compose/webpage.compose.yml pull;			docker-compose -f stacks/compose/webpage.compose.yml build;
-  - docker-compose -f stacks/compose/backup.compose.yml pull;			docker-compose -f stacks/compose/backup.compose.yml build;
+  #- docker-compose -f stacks/compose/backup.compose.yml pull;			docker-compose -f stacks/compose/backup.compose.yml build;
   - docker-compose -f stacks/compose/io.compose.yml pull;			docker-compose -f stacks/compose/io.compose.yml build;
-  - docker-compose -f stacks/compose/blackhole.compose.yml pull;		docker-compose -f stacks/compose/blackhole.compose.yml build;
+  #- docker-compose -f stacks/compose/blackhole.compose.yml pull;		docker-compose -f stacks/compose/blackhole.compose.yml build;
   - docker-compose -f stacks/compose/newlab.compose.yml pull;			docker-compose -f stacks/compose/newlab.compose.yml build;
   - docker-compose -f stacks/compose/mercury.compose.yml pull;			docker-compose -f stacks/compose/mercury.compose.yml build;
   - docker-compose -f stacks/radarr/radarr.compose.yml pull;			docker-compose -f stacks/radarr/radarr.compose.yml build;
@@ -32,7 +32,7 @@ before_script:
   - docker-compose -f stacks/photoshow/photoshow.compose.yml pull;		docker-compose -f stacks/photoshow/photoshow.compose.yml build;
   - docker-compose -f stacks/hass/hass.compose.yml pull;			docker-compose -f stacks/hass/hass.compose.yml build;
   - docker-compose -f stacks/pihole/pihole.compose.yml pull;			docker-compose -f stacks/pihole/pihole.compose.yml build;
-  - docker-compose -f stacks/docker-pxe/.travis.yml pull;			docker-compose -f stacks/docker-pxe/.travis.yml build;
+  #- docker-compose -f stacks/docker-pxe/.travis.yml pull;			docker-compose -f stacks/docker-pxe/.travis.yml build;
   - docker-compose -f stacks/phpbb/phpbb.compose.yml pull;			docker-compose -f stacks/phpbb/phpbb.compose.yml build;
   - docker-compose -f stacks/akaunting/example.compose.yml pull;		docker-compose -f stacks/akaunting/example.compose.yml build;
   - docker-compose -f stacks/ombi/ombi.compose.yml pull;			docker-compose -f stacks/ombi/ombi.compose.yml build;
