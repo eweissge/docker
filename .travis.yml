@@ -31,7 +31,7 @@ before_script:
   - docker-compose -f stacks/deluge/deluge.compose.yml pull;			docker-compose -f stacks/deluge/deluge.compose.yml build;
   - docker-compose -f stacks/photoshow/photoshow.compose.yml pull;		docker-compose -f stacks/photoshow/photoshow.compose.yml build;
   - docker-compose -f stacks/hass/hass.compose.yml pull;			docker-compose -f stacks/hass/hass.compose.yml build;
-  - docker-compose -f stacks/pihole/pihole.compose.yml pull;			docker-compose -f stacks/pihole/pihole.compose.yml build;
+  #- docker-compose -f stacks/pihole/pihole.compose.yml pull;			docker-compose -f stacks/pihole/pihole.compose.yml build;
   #- docker-compose -f stacks/docker-pxe/.travis.yml pull;			docker-compose -f stacks/docker-pxe/.travis.yml build;
   - docker-compose -f stacks/phpbb/phpbb.compose.yml pull;			docker-compose -f stacks/phpbb/phpbb.compose.yml build;
   - docker-compose -f stacks/akaunting/example.compose.yml pull;		docker-compose -f stacks/akaunting/example.compose.yml build;
