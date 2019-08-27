@@ -6,7 +6,8 @@ services:
     restart: unless-stopped
     #environment:
     env_file:
-      - ./.tsdb.env
+      #- ./.tsdb.env
+      - ./.tsdb.example.env
     volumes:
       - /opt/docker/volumes/teamspeakdb:/var/lib/mysql
 
@@ -16,7 +17,8 @@ services:
     restart: unless-stopped
     #environment:
     env_file:
-      - ./.ts.env
+      #- ./.ts.env
+      - ./.ts.example.env
     volumes:
       - /opt/docker/volumes/teamspeak:/var/ts3server
     ports:
