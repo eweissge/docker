@@ -6,3 +6,4 @@ stacks/sql/prod.init.sql
 stacks/sql/init.sql
 stacks/pihole/.pihole.env
 stacks/monitoring/.monitoring.env
+stacks/compose/newlab.compose.yml
