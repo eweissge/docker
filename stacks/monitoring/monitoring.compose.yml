@@ -6,10 +6,18 @@ services:
     restart: unless-stopped
     env_file:
       - ./.monitoring.env
-#    environment:
-#      TZ: America/Detroit
+    command: --admin-password-file '/tmp/.portainer.creds'
     ports:
       - 9999:9000
+    volumes:
+      - ./.portainer.creds:/tmp/.portainer.creds
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  watchtower:
+#    image: v2tec/watchtower:armhf-latest
+    image: v2tec/watchtower
+    container_name: watchtower
+    restart: unless-stopped
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 
@@ -30,14 +38,6 @@ services:
 #    security_opt:
 #      - apparmor:unconfined
 
-  watchtower:
-#    image: v2tec/watchtower:armhf-latest
-    image: v2tec/watchtower
-    container_name: watchtower
-    restart: unless-stopped
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-#    command: --interval 30
 
 #  adminer:
 #    image: adminer
