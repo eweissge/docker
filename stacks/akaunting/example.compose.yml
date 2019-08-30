@@ -5,27 +5,29 @@ services:
     container_name: akaunting
     restart: unless-stopped
     command: app:akaunting
-    environment:
-      - DEBUG=true
-      - TZ=America/Detroit
-      - DB_HOST=mysql
-      - DB_USER=akaunting
-      - DB_PASS=password
-      - DB_NAME=akaunting_db
-      - MAIL_DRIVER=smtp
-      - MAIL_HOST=smtp.gmail.com
-      - MAIL_PORT=587
-      - MAIL_FROM_ADDRESS=USERNAME@gmail.com
-      - MAIL_FROM_NAME=John Doe
-      - MAIL_ENCRYPTION=TLS
-      - MAIL_USERNAME=USERNAME@gmail.com
-      - MAIL_PASSWORD=PASSWORD
-      - AKAUNTING_URL=http://localhost:10080
-      - AKAUNTING_COMPANY_NAME=YOUR COMPANY
-      - AKAUNTING_COMPANY_EMAIL=COMPANY@YOURDOMAIN.COM
-      - AKAUNTING_ADMIN_EMAIL=USERNAME@gmail.com
-      - AKAUNTING_ADMIN_PASSWORD=PASSWORD
-      - AKAUNTING_BACKUPS_EXPIRY=0
+#    environment:
+#      - DEBUG=true
+#      - TZ=America/Detroit
+#      - DB_HOST=mysql
+#      - DB_USER=akaunting
+#      - DB_PASS=password
+#      - DB_NAME=akaunting_db
+#      - MAIL_DRIVER=smtp
+#      - MAIL_HOST=smtp.gmail.com
+#      - MAIL_PORT=587
+#      - MAIL_FROM_ADDRESS=USERNAME@gmail.com
+#      - MAIL_FROM_NAME=John Doe
+#      - MAIL_ENCRYPTION=TLS
+#      - MAIL_USERNAME=USERNAME@gmail.com
+#      - MAIL_PASSWORD=PASSWORD
+#      - AKAUNTING_URL=http://localhost:10080
+#      - AKAUNTING_COMPANY_NAME=YOUR COMPANY
+#      - AKAUNTING_COMPANY_EMAIL=COMPANY@YOURDOMAIN.COM
+#      - AKAUNTING_ADMIN_EMAIL=USERNAME@gmail.com
+#      - AKAUNTING_ADMIN_PASSWORD=PASSWORD
+#      - AKAUNTING_BACKUPS_EXPIRY=0
+    env_file:
+      - ./.akaunting.env
     depends_on:
       - mysql
     volumes:
@@ -35,10 +37,12 @@ services:
     image: sameersbn/mysql:5.7.24
     container_name: mysql_ak
     restart: unless-stopped
-    environment:
-      - DB_USER=akaunting
-      - DB_PASS=password
-      - DB_NAME=akaunting_db
+    env_file:
+      - ./.akauntingdb.env
+    #environment:
+      #- DB_USER=akaunting
+      #- DB_PASS=password
+      #- DB_NAME=akaunting_db
     volumes:
       - /opt/docker/volumes/akaunting/mysql:/var/lib/mysql
 
