@@ -11,9 +11,7 @@ services:
       - UMASK_SET=022 #optional
     volumes:
       - /home/eric/docker/volumes/lidarr/config:/config
-      #- /home/eric/docker/volumes/lidarr/music/:/music
-      #- /home/eric/docker/volumes/lidarr/downloads:/downloads
-      - /media/orion/Seagate3.0/music:/music
+      - /media/orion/Jupiter/FLAC:/music
       - /media/orion/Venus/downloads:/downloads
     ports:
       - 8686:8686

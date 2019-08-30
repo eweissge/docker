@@ -10,7 +10,7 @@ services:
     ports:
       - 9999:9000
     volumes:
-      - ./.portainer.creds:/tmp/.portainer.creds
+      - /opt/docker/stacks/monitoring/.portainer.creds:/tmp/.portainer.creds
       - /var/run/docker.sock:/var/run/docker.sock
 
   watchtower:
