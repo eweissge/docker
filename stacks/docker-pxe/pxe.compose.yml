@@ -1,0 +1,12 @@
+version: '2'
+services:
+  docker-pxe:
+    image: ferrarimarco/pxe
+    container_name: pxe
+    restart: unless-stopped
+    environment:
+    volumes:
+    ports:
+
+
+#https://github.com/ferrarimarco/docker-pxe

@@ -4,9 +4,9 @@ services:
     image: mariadb
     container_name: tsdb
     restart: unless-stopped
-    environment:
-      MYSQL_ROOT_PASSWORD: example
-      MYSQL_DATABASE: teamspeak
+    env_file:
+      - /opt/docker/stacks/teamspeak/.tsdb.env
+      #- ./.tsdb.example.env
     volumes:
       - /opt/docker/volumes/teamspeakdb:/var/lib/mysql
 
@@ -14,23 +14,16 @@ services:
     image: teamspeak
     container_name: teamspeak
     restart: unless-stopped
-    environment:
-      TZ: America/Detroit
-      TS3SERVER_DB_PLUGIN: ts3db_mariadb
-      TS3SERVER_DB_SQLCREATEPATH: create_mariadb
-      TS3SERVER_DB_HOST: tsdb
-      TS3SERVER_DB_USER: root
-      TS3SERVER_DB_PASSWORD: example
-      TS3SERVER_DB_NAME: teamspeak
-      TS3SERVER_DB_WAITUNTILREADY: 30
-      TS3SERVER_LICENSE: accept
+    env_file:
+      - /opt/docker/stacks/teamspeak/.ts.env
+      #- /opt/docker/stacks/teamspeak/.ts.example.env
     volumes:
       - /opt/docker/volumes/teamspeak:/var/ts3server
     ports:
       - 9987:9987/udp
       - 10011:10011
       - 30033:30033
-    depends_on: 
+    depends_on:
       - tsdb
     links:
       - tsdb

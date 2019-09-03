@@ -1,8 +1,2 @@
 volumes
-stacks/mediawiki/LocalSettings.php
-stacks/phpbb/env/prod.phpbb.env
-stacks/phpbb/env/prod.phpbbdb.env
-stacks/sql/prod.init.sql
-stacks/sql/init.sql
-stacks/pihole/.pihole.env
-stacks/monitoring/.monitoring.env
+.c9

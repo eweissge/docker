@@ -5,7 +5,8 @@ services:
     container_name: urbackup
     restart: unless-stopped
     volumes:
-      - /opt/docker/volumes/urbackup/backups:/backups
+      #- /opt/docker/volumes/urbackup/backups:/backups
+      - /media/orion/ColdSto/backup/urbackup/backups:/backups
       - /opt/docker/volumes/urbackup/database:/var/urbackup
     ports:
       # WebUI on port 55414
