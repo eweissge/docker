@@ -10,3 +10,8 @@ services:
       - 1194:1194/udp
     cap_add:
       - NET_ADMIN
+
+
+# Further documentation
+
+# https://github.com/kylemanna/docker-openvpn/blob/master/docs/docker-compose.md 
