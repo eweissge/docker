@@ -14,7 +14,7 @@ services:
     container_name: mosquitto
     restart: unless-stopped
     volumes:
-      - /opt/docker/stacks/mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
+      - ../mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
       - /opt/docker/volumes/mosquitto/data:/mosquitto/data 
       - /opt/docker/volumes/mosquitto/log:/mosquitto/log
     ports:
