@@ -5,8 +5,8 @@ services:
     container_name: tsdb
     restart: unless-stopped
     env_file:
-      - /opt/docker/stacks/teamspeak/.tsdb.example.env
-      #- ./.tsdb.example.env
+      #- /opt/docker/stacks/teamspeak/.tsdb.example.env
+      - ./.tsdb.example.env
     volumes:
       - /opt/docker/volumes/teamspeakdb:/var/lib/mysql
 
@@ -15,7 +15,8 @@ services:
     container_name: teamspeak
     restart: unless-stopped
     env_file:
-      - /opt/docker/stacks/teamspeak/.ts.example.env
+      #- /opt/docker/stacks/teamspeak/.ts.example.env
+      - ./.ts.example.env
     volumes:
       - /opt/docker/volumes/teamspeak:/var/ts3server
     ports:
