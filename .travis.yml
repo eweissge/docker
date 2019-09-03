@@ -49,8 +49,8 @@ script:
   #- docker-compose -f stacks/lancache/lancache.compose.yml down;
   - docker-compose -f stacks/sonarr/sonarr.compose.yml up -d;
   - docker-compose -f stacks/sonarr/sonarr.compose.yml down;
-  #- docker-compose -f stacks/monitoring/monitoring.compose.yml up -d;
-  #- docker-compose -f stacks/monitoring/monitoring.compose.yml down;
+  - docker-compose -f stacks/monitoring/example.compose.yml up -d;
+  - docker-compose -f stacks/monitoring/example.compose.yml down;
   - docker-compose -f stacks/calibre/calibre.compose.yml up -d;
   - docker-compose -f stacks/calibre/calibre.compose.yml down;
   - docker-compose -f stacks/lidarr/lidarr.compose.yml up -d;
@@ -101,8 +101,8 @@ script:
   - docker-compose -f stacks/ombi/ombi.compose.yml down;
   #- docker-compose -f stacks/mosquitto/mosquitto.compose.yml up -d;
   #- docker-compose -f stacks/mosquitto/mosquitto.compose.yml down;
-  - docker-compose -f stacks/teamspeak/teamspeak.compose.yml up -d;
-  - docker-compose -f stacks/teamspeak/teamspeak.compose.yml down;
+  - docker-compose -f stacks/teamspeak/example.compose.yml up -d;
+  - docker-compose -f stacks/teamspeak/example.compose.yml down;
   #- docker-compose -f stacks/flexget/flexget.compose.yml up -d; 
   #- docker-compose -f stacks/flexget/flexget.compose.yml down;
   - docker-compose -f stacks/cloud9/cloud9.compose.yml up -d;
