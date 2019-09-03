@@ -49,8 +49,8 @@ script:
   #- docker-compose -f stacks/lancache/lancache.compose.yml down;
   - docker-compose -f stacks/sonarr/sonarr.compose.yml up -d;
   - docker-compose -f stacks/sonarr/sonarr.compose.yml down;
-  #- docker-compose -f stacks/monitoring/monitoring.compose.yml up -d;
-  #- docker-compose -f stacks/monitoring/monitoring.compose.yml down;
+  #- docker-compose -f stacks/monitoring/example.compose.yml up -d;
+  #- docker-compose -f stacks/monitoring/example.compose.yml down;
   - docker-compose -f stacks/calibre/calibre.compose.yml up -d;
   - docker-compose -f stacks/calibre/calibre.compose.yml down;
   - docker-compose -f stacks/lidarr/lidarr.compose.yml up -d;
@@ -95,8 +95,8 @@ script:
   #- docker-compose -f stacks/docker-pxe/.travis.yml down;
   #- docker-compose -f stacks/phpbb/phpbb.compose.yml up -d;
   #- docker-compose -f stacks/phpbb/phpbb.compose.yml down;
-  #- docker-compose -f stacks/akaunting/example.compose.yml up -d;
-  #- docker-compose -f stacks/akaunting/example.compose.yml down;
+  - docker-compose -f stacks/akaunting/example.compose.yml up -d;
+  - docker-compose -f stacks/akaunting/example.compose.yml down;
   - docker-compose -f stacks/ombi/ombi.compose.yml up -d;
   - docker-compose -f stacks/ombi/ombi.compose.yml down;
   #- docker-compose -f stacks/mosquitto/mosquitto.compose.yml up -d;
