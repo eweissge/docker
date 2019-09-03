@@ -95,14 +95,14 @@ script:
   #- docker-compose -f stacks/docker-pxe/.travis.yml down;
   #- docker-compose -f stacks/phpbb/phpbb.compose.yml up -d;
   #- docker-compose -f stacks/phpbb/phpbb.compose.yml down;
-  - docker-compose -f stacks/akaunting/example.compose.yml up -d;
-  - docker-compose -f stacks/akaunting/example.compose.yml down;
+  #- docker-compose -f stacks/akaunting/example.compose.yml up -d;
+  #- docker-compose -f stacks/akaunting/example.compose.yml down;
   - docker-compose -f stacks/ombi/ombi.compose.yml up -d;
   - docker-compose -f stacks/ombi/ombi.compose.yml down;
   #- docker-compose -f stacks/mosquitto/mosquitto.compose.yml up -d;
   #- docker-compose -f stacks/mosquitto/mosquitto.compose.yml down;
-  - docker-compose -f stacks/teamspeak/teamspeak.compose.yml up -d;
-  - docker-compose -f stacks/teamspeak/teamspeak.compose.yml down;
+  #- docker-compose -f stacks/teamspeak/teamspeak.compose.yml up -d;
+  #- docker-compose -f stacks/teamspeak/teamspeak.compose.yml down;
   #- docker-compose -f stacks/flexget/flexget.compose.yml up -d; 
   #- docker-compose -f stacks/flexget/flexget.compose.yml down;
   - docker-compose -f stacks/cloud9/cloud9.compose.yml up -d;
