@@ -60,7 +60,7 @@ script:
   #- docker-compose -f stacks/plex/plex.compose.yml down;
   #- docker-compose -f stacks/transmission/transmission.compose.yml up -d;
   #- docker-compose -f stacks/transmission/transmission.compose.yml down;
-  #- docker-compose -f stacks/urbackup/urbackup.compose.yml up -d;
+  - docker-compose -f stacks/urbackup/urbackup.compose.yml up -d;
   #- docker-compose -f stacks/urbackup/urbackup.compose.yml down;
   #- docker-compose -f stacks/mediawiki/mediawiki.compose.yml up -d;
   #- docker-compose -f stacks/mediawiki/mediawiki.compose.yml down;
@@ -80,7 +80,7 @@ script:
   #- docker-compose -f stacks/compose/blackhole.compose.yml down;
   #- docker-compose -f stacks/compose/newlab.compose.yml up -d;
   #- docker-compose -f stacks/compose/newlab.compose.yml down;
-  #- docker-compose -f stacks/compose/mercury.compose.yml up -d;			
+  #- docker-compose -f stacks/compose/mercury.compose.yml up -d;
   #- docker-compose -f stacks/compose/mercury.compose.yml down;
   #- docker-compose -f stacks/radarr/radarr.compose.yml up -d;
   #- docker-compose -f stacks/radarr/radarr.compose.yml down;
@@ -104,15 +104,15 @@ script:
   #- docker-compose -f stacks/mosquitto/mosquitto.compose.yml down;
   #- docker-compose -f stacks/teamspeak/example.compose.yml up -d;
   #- docker-compose -f stacks/teamspeak/example.compose.yml down;
-  #- docker-compose -f stacks/flexget/flexget.compose.yml up -d; 
+  #- docker-compose -f stacks/flexget/flexget.compose.yml up -d;
   #- docker-compose -f stacks/flexget/flexget.compose.yml down;
   #- docker-compose -f stacks/cloud9/cloud9.compose.yml up -d;
   #- docker-compose -f stacks/cloud9/cloud9.compose.yml down;
   #- docker-compose -f stacks/nodered/nodered.compose.yml up -d;
   #- docker-compose -f stacks/nodered/nodered.compose.yml down;
-  #- docker-compose -f stacks/nextcloud/nextcloud.compose.yml up -d;		
+  #- docker-compose -f stacks/nextcloud/nextcloud.compose.yml up -d;
   #- docker-compose -f stacks/nextcloud/nextcloud.compose.yml down;
-  #- docker-compose -f stacks/gitlab/gitlab.compose.yml up -d;
+  - docker-compose -f stacks/gitlab/gitlab.compose.yml up -d;
   #- docker-compose -f stacks/gitlab/gitlab.compose.yml down;
   #- docker-compose -f stacks/bazarr/bazarr.compose.yml up -d;
   #- docker-compose -f stacks/bazarr/bazarr.compose.yml down;
@@ -121,7 +121,8 @@ after_script:
   - docker ps -a
 
   - docker-compose -f stacks/openvpn/vpn.compose.yml down;
-
+  - docker-compose -f stacks/urbackup/urbackup.compose.yml down;
+  - docker-compose -f stacks/gitlab/gitlab.compose.yml down;
   # You may want to update this to whatever the latest version is, or keep it
   # the same as your local machines. However, I have only tested it with 1.8.0+.
   # There should be a time in the future when this is not necessary - it is
