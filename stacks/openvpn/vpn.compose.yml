@@ -1,0 +1,22 @@
+version: '2'
+services:
+  openvpn:
+    image: kylemanna/openvpn
+    container_name: ovpn
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - /opt/docker/volumes/openvpn:/etc/openvpn
+    ports:
+      - 1194:1194/udp
+    cap_add:
+      - NET_ADMIN
+
+
+# Added build context options to point to another dockerfile with the armhf alpine base image
+
+# Further documentation
+
+# https://github.com/kylemanna/docker-openvpn/blob/master/docs/docker-compose.md 

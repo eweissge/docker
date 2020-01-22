@@ -1,11 +1,11 @@
 version: '2'
 services:
   pihole:
-    image: pihole/pihole
+    image: pihole/pihole:latest
     container_name: pihole
     restart: unless-stopped
     env_file:
-      - /opt/docker/stacks/pihole/.pihole.env
+      - .pihole.env
     volumes:
       - /opt/docker/volumes/pihole/etc-pihole/:/etc/pihole/
     dns:

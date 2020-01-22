@@ -17,7 +17,6 @@ services:
       - /media/orion/Tosh3.0/TV:/tv
       - /media/orion/Jupiter/archive.tv:/tv.archive
       - /media/orion/Seagate3.0/Classic.tv:/tv.classic
-      - /media/orion/Seagate3.0/Classics:/movies.classics
-      
+      - /media/orion/Seagate3.0/Classics:/movies.classics    
     ports:
       - 6767:6767

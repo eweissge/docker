@@ -12,6 +12,7 @@ before_install:
 before_script:
 
 script:
+  #- docker-compose -f stacks/openvpn/vpn.compose.yml up -d;
   #- docker-compose -f stacks/lancache/lancache.compose.yml up -d;
   - docker-compose -f stacks/sonarr/sonarr.compose.yml up -d;
   - docker-compose -f stacks/monitoring/example.compose.yml up -d;
@@ -89,7 +90,9 @@ after_script:
 
   - docker ps -a
 
-
+  #- docker-compose -f stacks/openvpn/vpn.compose.yml down;
+  #- docker-compose -f stacks/urbackup/urbackup.compose.yml down;
+  #- docker-compose -f stacks/gitlab/gitlab.compose.yml down;
   # You may want to update this to whatever the latest version is, or keep it
   # the same as your local machines. However, I have only tested it with 1.8.0+.
   # There should be a time in the future when this is not necessary - it is
