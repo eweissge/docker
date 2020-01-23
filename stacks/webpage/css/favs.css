@@ -34,7 +34,8 @@
 
  .btn-secondary
  {
- 	background-color: #222222;
+	 background-color: #222222;
+	 color: white;
  }
 
 input.form-control
