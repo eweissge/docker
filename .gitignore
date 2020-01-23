@@ -2,3 +2,4 @@ volumes
 .c9
 *.env
 sql
+node_modules
