@@ -4,13 +4,16 @@ services:
     image: linuxserver/cloud9
     container_name: cloud9
     restart: unless-stopped
-    environment:
-      PUID: 1000
-      PGID: 1000
-      TZ: America/Detroit
-      GITURL: https://github.com/linuxserver/docker-cloud9.git
+    env_file:
+      - secret.env
+#    environment:
+#      PUID: 1000
+#      PGID: 1000
+#      TZ: America/Detroit
+#      GITURL: https://github.com/linuxserver/docker-cloud9.git
     volumes:
-      - /opt/docker/volumes/cloud9/code:/code
+      #- /opt/docker/volumes/cloud9/code:/code
+      - /opt/docker/stacks:/code
       - /var/run/docker.sock:/var/run/docker.sock
     ports:
       - 8888:8000
