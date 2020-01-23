@@ -34,7 +34,8 @@
 
  .btn-secondary
  {
- 	background-color: #222222;
+	 background-color: #222222;
+	 color: white;
  }
 
 input.form-control
@@ -51,4 +52,14 @@ form.form-signin#regform
 	height: 75%;
 	margin: 0 auto;
 	vertical-align: middle;
+}
+
+H4
+{
+	color: white;
+}
+
+p
+{
+	color: white;
 }
