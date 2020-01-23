@@ -17,18 +17,11 @@
       <div class="content_section floating_element">
         <div class="section_header section_header_red">
           <div id="about"></div>
-          <?php
-            if (!func::checkLoginState($db))
-            {
-              echo '<center><H1><a href="loginform.php">LOGIN</a></H1></center>';
-            }
-            else
-            {
-              echo "<center><b>Welcome ".$_SESSION['username']."! </center></b>";
-            }
-          ?>
-        </div>
-
+            <?php
+              if (!func::checkLoginState($db)) { echo '<center><H1><a href="loginform.php">LOGIN</a></H1></center>'; }
+              else { echo "<center><b>Welcome ".$_SESSION['username']."! </center></b>"; }
+            ?>
+          </div>
 
 	<center>Not a member?  <a href="register.php">Sign up</a></center>
   <center><a href="/lib/phpinfo.php">phpinfo</a></center>
@@ -39,11 +32,13 @@
     		Eventually I will be posting my resume and some other biographical information for your reading
     		pleasure.
       </p>
+      <!--
       <p>
         Disclaimer: I, in no way, authorize illegal distribution of copyrighted material.  Files that you find here
 		    are only a proof of concept of autoindexing of filepaths and in no way, are meant to enable illegal distribution.
 		    I am not responsible for the actions of the users of this site.
-	  </p>
+      </p>
+      -->
 <!--
 	  <p>
 	  <center>
@@ -72,16 +67,23 @@
           search algorithms, data storage structures, and
           basically anything having to do with computers and how people interact with them.
         </p>
+        <p>
+          I typically have around 3-4 projects going on at the same time, 2 professional and 2 personal.
+          I'm currently working on NodeJS REST API for asynchronously retrieving database information.
+          I have a Blue / Green deployment structure behind an NGINX reverse proxy and use these as my
+          production and staging environments.  I also have a separate isolated development environment
+          and I manage most of my version control with git.
+        </p>
       </div>
 
- <div class="section_header section_header_red">
-          <div id="changes"></div>
-                Work Experience
+      <div class="section_header section_header_red">
+        <div id="changes"></div>
+          Work Experience
         </div>
         <div class="content_section_text">
       	  <ul><p><b>Linux Administration</b>
-	    <li>Daily use of Debian, Red Hat Enterpriese Linux, Ubuntu</li>
-	    <li>Familiar with Arch and Gentoo</li>
+	          <li>Daily use of Debian, Red Hat Enterpriese Linux, Ubuntu</li>
+	          <li>Familiar with Arch and Gentoo</li>
             <li>Linux server administration (http, smtp, pop3, imap, dns, dhcp, rsync, ftp, ssh, nfs)</li>
             <li>General network administration</li>
             <li>Apache + countless modules such as (ie: mod_rewrite)</li>
@@ -98,7 +100,7 @@
             <li>Server specification and build</li>
             I do projects on a time and materials basis or in special cases, a fixed fee. I require partial payment up front in good faith that the client is sincerely interested in the proposed project.
           </ul></p>
-</div>
+        </div>
       <div class="section_header">
         <div id="changes"></div>
           System Configuration Overview
