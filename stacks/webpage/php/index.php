@@ -27,10 +27,10 @@
   <center><a href="/lib/phpinfo.php">phpinfo</a></center>
     <div class="content_section_text">
       <p>
-        This is my personal webpage (basically a modified ubuntu default page).
-    		Below you will find some links to some of the files that I am hosting here.
+        This is my personal webpage (basically a modified Ubuntu default page).
+    		<!--Below you will find some links to some of the files that I am hosting here.-->
     		Eventually I will be posting my resume and some other biographical information for your reading
-    		pleasure.
+    		pleasure, so stay tuned.
       </p>
       <!--
       <p>
@@ -88,7 +88,7 @@
         </div>
         <div class="content_section_text">
       	  <ul><p><b>Linux Administration</b>
-	          <li>Daily use of Debian, Red Hat Enterpriese Linux, Ubuntu</li>
+	          <li>Daily use of Debian, RHEL, Ubuntu</li>
 	          <li>Familiar with Arch and Gentoo</li>
             <li>Linux server administration (http, smtp, pop3, imap, dns, dhcp, rsync, ftp, ssh, nfs)</li>
             <li>General network administration</li>
@@ -99,7 +99,7 @@
             <li>Postfix mail server</li>
             <li>BIND DNS server</li>
             <li>IPTables Linux firewall</li>
-            <li>VMWare, KVM-qemu, Virtual Box, LXC and Docker</li>
+            <li>VMWare, VROPs, KVM-qemu, Virtual Box, LXC and Docker</li>
             <li>Source Code Management using Git and Subversion</li>
             <li>Linux Software RAID</li>
             <li>Device Mapper and Logical Volume Management</li>
