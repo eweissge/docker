@@ -20,24 +20,24 @@
 
 class func
 {
-
-	public static function sanitize($str)
-  {
+  	public static function sanitize($str)
+	{
+		/* Takes a string, trims, removes slashes and special characters */
 		$debug = true;
 		if ($debug) echo "BEGIN sanitize function <br/>\n";
-    foreach($str as $key => $val)
-    {
+    	foreach($str as $key => $val)
+    	{
 			if ($debug) echo "Trimming ".$key." = ".$val." <br/>\n";
-      $val = trim($val);
+      		$val = trim($val);
 			if ($debug) echo "Stripping slashes ".$key." = ".$val." <br/>\n";
-      $val = stripslashes($val);
+      		$val = stripslashes($val);
 			if ($debug) echo "Removing html special chars ".$key." = ".$val." <br/>\n";
-      $val = htmlspecialchars($val);
-    }
+      		$val = htmlspecialchars($val);
+    	}
 		if ($debug) echo "Returning ".$val." <br/>\n";
 		if ($debug) echo "END sanitize function <br/>\n";
-    return $str;
-  }
+    	return $str;
+	}
 
 	public static function printResults($results)
 	{
