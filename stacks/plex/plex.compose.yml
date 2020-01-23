@@ -11,11 +11,11 @@ services:
       VERSION: docker
     volumes:
       - /opt/docker/volumes/plex/config:/config
-      - /media/orion/Tosh3.0/TV:/data/tv
-      - /media/orion/Jupiter/archive.tv:/data/tv.archive
-      - /media/orion/Seagate3.0/Classic.tv:/data/tv.classic
-      - /media/orion/Tosh3.0/Movies:/data/movies
-      - /media/orion/Seagate3.0/Classics:/data/movies.classics
       - /opt/docker/volumes/plex/transcode:/transcode
+      - /media/orion/Titan/Movies:/data/movies
+      - /media/orion/Titan/Classics:/data/movies.classics
+      - /media/orion/ColdSto/archive.tv:/data/tv.archive
+      - /media/orion/ColdSto/TV:/data/tv
+      - /media/orion/ColdSto/Classic.tv:/data/tv.classic
     ports:
       - 32400:32400
