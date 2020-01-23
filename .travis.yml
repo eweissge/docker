@@ -23,7 +23,7 @@ script:
   #- docker-compose -f stacks/transmission/transmission.compose.yml up -d;
   #- docker-compose -f stacks/urbackup/urbackup.compose.yml up -d;
   #- docker-compose -f stacks/mediawiki/mediawiki.compose.yml up -d;
-  - docker-compose -f stacks/nodejs/nodejs.compose.yml up -d;
+  #- docker-compose -f stacks/nodejs/nodejs.compose.yml up -d;
   #- docker-compose -f stacks/compose/rpi4.compose.yml up -d;
   #- docker-compose -f stacks/compose/rssmedia.compose.yml up -d;
   #- docker-compose -f stacks/compose/webpage.compose.yml up -d;
@@ -63,7 +63,7 @@ after_script:
   #- docker-compose -f stacks/transmission/transmission.compose.yml down;
   #- docker-compose -f stacks/urbackup/urbackup.compose.yml down;
   #- docker-compose -f stacks/mediawiki/mediawiki.compose.yml down;
-  - docker-compose -f stacks/nodejs/nodejs.compose.yml down;
+  #- docker-compose -f stacks/nodejs/nodejs.compose.yml down;
   #- docker-compose -f stacks/compose/rpi4.compose.yml down;
   #- docker-compose -f stacks/compose/rssmedia.compose.yml down;
   #- docker-compose -f stacks/compose/webpage.compose.yml down;
