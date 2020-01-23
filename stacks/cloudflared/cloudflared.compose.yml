@@ -1,0 +1,65 @@
+version: '2'
+services:
+  cloudflared:
+    image: visibilityspots/cloudflared:arm
+    container_name: cloudflared
+    restart: unless-stopped
+    networks:
+      pihole_net:
+        ipv4_address: 10.0.0.2
+
+  pihole:
+    image: pihole/pihole
+    container_name: pihole
+    restart: unless-stopped
+    env_file:
+      - ../pihole/.pihole.env
+    volumes:
+      - /opt/docker/volumes/pihole/etc-pihole/:/etc/pihole/
+      - /opt/docker/volumes/pihole/dnsmasq:/etc/dnsmasq.d
+    dns:
+      - 10.0.0.2#5054
+      - 1.1.1.1
+    ports:
+      - 53:53/tcp
+      - 53:53/udp
+      - 67:67/udp
+      - 80:80/tcp
+      - 443:443/tcp
+    cap_add:
+      - NET_ADMIN
+    networks:
+      pihole_net:
+        ipv4_address: 10.0.0.3
+
+  openvpn:
+#    image: kylemanna/openvpn
+    image: olivierguerriat/rpi-docker-openvpn
+    container_name: ovpn
+    restart: unless-stopped
+    build:
+      context: ../openvpn
+      dockerfile: Dockerfile
+    volumes:
+      - /opt/docker/volumes/openvpn:/etc/openvpn
+    ports:
+      - 1194:1194/udp
+    cap_add:
+      - NET_ADMIN
+    networks:
+      pihole_net:
+        ipv4_address: 10.0.0.4
+
+
+# Added build context options to point to another dockerfile with the armhf alpine base image
+
+# Further documentation
+
+# https://github.com/kylemanna/docker-openvpn/blob/master/docs/docker-compose.md 
+
+networks:
+  pihole_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.0.0.0/29
