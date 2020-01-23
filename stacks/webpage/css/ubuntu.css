@@ -6,7 +6,7 @@
 body, html {
   padding: 3px 3px 3px 3px;
 
-  background-color: #D8DBE2;
+  background-color: #DBDBEA;
 
   font-family: Verdana, sans-serif;
   font-size: 11pt;
@@ -28,7 +28,7 @@ div.main_page {
   border-color: #212738;
   border-style: solid;
 
-  background-color: #FFFFFF;
+  background-color: #111111;
 
   text-align: center;
 }
@@ -37,7 +37,8 @@ div.page_header {
   height: 99px;
   width: 100%;
 
-  background-color: #F5F6F7;
+  /*background-color: #F5F6F7; */
+  background-color: #111111;
 }
 
 div.page_header span {
@@ -60,7 +61,7 @@ div.table_of_contents {
 
   margin: 3px 3px 3px 3px;
 
-  background-color: #FFFFFF;
+  background-color: #111111;
 
   text-align: left;
 }
@@ -72,7 +73,7 @@ div.table_of_contents_item {
 
   margin: 4px 0px 0px 0px;
 
-  background-color: #FFFFFF;
+  background-color: #111111;
 
   color: #000000;
   text-align: left;
@@ -85,7 +86,7 @@ div.table_of_contents_item a {
 div.content_section {
   margin: 3px 3px 3px 3px;
 
-  background-color: #FFFFFF;
+  background-color: #111111;
 
   text-align: left;
 }
@@ -105,7 +106,8 @@ div.content_section_text pre {
   border-style: dotted;
   border-color: #000000;
 
-  background-color: #F5F6F7;
+  /*background-color: #F5F6F7;*/
+  background-color: #111111;
 
   font-style: italic;
 }
@@ -116,6 +118,7 @@ div.content_section_text p {
 
 div.content_section_text ul, div.content_section_text li {
   padding: 4px 8px 4px 16px;
+  color: white;
 }
 
 div.section_header {
