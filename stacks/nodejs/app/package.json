@@ -1,0 +1,24 @@
+{
+	"name": "MyNodejs",
+	"version": "1.0.0",
+	"author": "Eric Weissgerber",
+	"description": "My first nodejs application",
+	"scripts": {
+		"start": "node my-nodejs.js",
+		"dev": "nodemon my-nodejs.js",
+		"lint": "xo my-nodejs.js",
+		"format": "xo --fix my-nodejs.js"
+	},
+	"dependencies": {
+		"express": "^4.16.2",
+		"mysql": "latest",
+		"mariadb": "latest",
+		"nodemon": "^1.14.12",
+		"xo": "^0.25.3"
+	},
+	"repository": {
+		"type": "git",
+		"url": "github:eweissge/docker"
+	},
+	"license": "MIT"
+}

@@ -16,19 +16,23 @@ services:
     restart: unless-stopped
     user: "node"
     working_dir: /home/node/app
+#    working_dir: /home/node/website
     environment:
-      - NODE_ENV=production
+      - NODE_ENV=development
     volumes:
-      - /home/eric/docker/volumes/nodejs:/home/node/app
+      - ./app:/home/node/app
+#      - ./website:/home/node/website
     ports:
       - 8081:8081
-    command: "npm start"
+#    command: "sh -c 'npm i && npm run start'"
+#    command: "sh -c 'npm i && npm run format'"
+    command: "sh -c 'npm i && npm run dev'"
     links:
       - db
 
-#  adminer:
-#    image: adminer
-#    container_name: adminer
-#    restart: unless-stopped
-#    ports:
-#      - 8080:8080
+  adminer:
+    image: adminer
+    container_name: adminer
+    restart: unless-stopped
+    ports:
+      - 8080:8080
