@@ -10,20 +10,6 @@
 	{
 		$debug = false;
 
-		/*
-		if(func::checkLoginState($db))
-		{
-			if ($debug) echo "Already logged in <br/>\n";
-			header("Location: home.php");
-		}
-		else
-		{
-			if ($debug) echo "Not logged in <br/>\n";
-			func::createCookie($username, $userid, $token, $serialNum);
-			func::createSession($username, $userid, $token, $serialNum);
-		}
-		*/
-
 		$checkUserQuery = "SELECT *
 			FROM users
 			WHERE username=:username;";
