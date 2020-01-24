@@ -61,7 +61,7 @@
 		      and qualifications <a target="_blank" href="/pdf/resume2018.pdf">here</a>.
         </p>
         <p>
-		      I enjoy astronomy, physics, debate, new technology, science fiction and wild theories.
+		      I enjoy astronomy, physics, debate, new technology, science fiction and video games.
 		      I'm very technology saavy and enjoy learning everything I possibly can.  I do my best to
           stay on top of emerging hardware, architecture, virtualization, networking technology,
           search algorithms, data storage structures, and
