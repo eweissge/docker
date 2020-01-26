@@ -78,7 +78,7 @@
           during deployments to my environments.  All I have to do next is setup a webhook from travis
           to automatically deploy my code and change the active color and I will have a complete CI/CD 
           environment.  At the same time, I'm testing Gitlab / Kubernetes CI/CD pipeline using a dockerized
-          Gitlab instance and MiniKube.
+          <a href="https://about.gitlab.com/">Gitlab</a> instance and <a href="https://kubernetes.io/docs/home/">MiniKube</a>.
         </p>
       </div>
 
