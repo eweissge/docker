@@ -77,7 +77,8 @@
           I'm currently doing a lot of work with Docker and Docker-compose to deploy stacks of containers
           during deployments to my environments.  All I have to do next is setup a webhook from travis
           to automatically deploy my code and change the active color and I will have a complete CI/CD 
-          environment.
+          environment.  At the same time, I'm testing Gitlab / Kubernetes CI/CD pipeline using a dockerized
+          Gitlab instance and MiniKube.
         </p>
       </div>
 
