@@ -12,7 +12,7 @@ services:
       TZ: "America/Detroit"
     command: --init-file /data/application/init.sql
     volumes:
-      - ./webpage/sql/init.sql:/data/application/init.sql
+      - /opt/docker/stacks/sql/init.sql:/data/application/init.sql
 
   adminer:
     container_name: adminer
@@ -31,7 +31,7 @@ services:
       context: .
       dockerfile: ./php/Dockerfile
     volumes:
-      - ./webpage:/usr/share/nginx/html
+      - /opt/docker/stacks/webpage:/usr/share/nginx/html
 
   nginx:
     container_name: nginx
@@ -42,7 +42,7 @@ services:
     ports:
       - 81:80
     volumes:
-      - ./webpage:/usr/share/nginx/html
-      - ./webpage/site.conf:/etc/nginx/conf.d/default.conf
+      - /opt/docker/stacks/webpage:/usr/share/nginx/html
+      - /opt/docker/stacks/webpage/site.conf:/etc/nginx/conf.d/default.conf
     links:
       -  php
