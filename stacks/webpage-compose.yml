@@ -13,6 +13,7 @@ services:
     command: --init-file /data/application/init.sql
     volumes:
       - /opt/docker/stacks/sql/init.sql:/data/application/init.sql
+      #- /opt/docker/stacks/sql/example.sql:/data/application/init.sql
 
   adminer:
     container_name: adminer
