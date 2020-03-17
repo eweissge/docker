@@ -1,0 +1,8 @@
+version: "3.2"
+services:
+  dotnet:
+    image: microsoft/dotnet
+    container_name: dotnet
+#    restart: unless-stopped
+    volumes:
+      - /opt/docker/volumes/dotnet:/data
