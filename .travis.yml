@@ -15,13 +15,13 @@ script:
   - docker-compose -f stacks/webpage-compose.yml up -d;
   #- docker-compose -f stacks/openvpn/vpn.compose.yml up -d;
   #- docker-compose -f stacks/lancache/lancache.compose.yml up -d;
-  #- docker-compose -f stacks/sonarr/sonarr.compose.yml up -d;
-  #- docker-compose -f stacks/monitoring/example.compose.yml up -d;
-  #- docker-compose -f stacks/calibre/calibre.compose.yml up -d;
-  #- docker-compose -f stacks/lidarr/lidarr.compose.yml up -d;
-  #- docker-compose -f stacks/plex/plex.compose.yml up -d;
-  #- docker-compose -f stacks/transmission/transmission.compose.yml up -d;
-  #- docker-compose -f stacks/urbackup/urbackup.compose.yml up -d;
+  - docker-compose -f stacks/sonarr/sonarr.compose.yml up -d;
+  - docker-compose -f stacks/monitoring/example.compose.yml up -d;
+  - docker-compose -f stacks/calibre/calibre.compose.yml up -d;
+  - docker-compose -f stacks/lidarr/lidarr.compose.yml up -d;
+  - docker-compose -f stacks/plex/plex.compose.yml up -d;
+  - docker-compose -f stacks/transmission/transmission.compose.yml up -d;
+  - docker-compose -f stacks/urbackup/urbackup.compose.yml up -d;
   #- docker-compose -f stacks/mediawiki/mediawiki.compose.yml up -d;
   #- docker-compose -f stacks/nodejs/nodejs.compose.yml up -d;
   #- docker-compose -f stacks/compose/rpi4.compose.yml up -d;
@@ -32,36 +32,37 @@ script:
   #- docker-compose -f stacks/compose/blackhole.compose.yml up -d;
   #- docker-compose -f stacks/compose/newlab.compose.yml up -d;
   #- docker-compose -f stacks/compose/mercury.compose.yml up -d;			
-  #- docker-compose -f stacks/radarr/radarr.compose.yml up -d;
+  - docker-compose -f stacks/radarr/radarr.compose.yml up -d;
   #- docker-compose -f stacks/deluge/deluge.compose.yml up -d;
-  #- docker-compose -f stacks/photoshow/photoshow.compose.yml up -d;
+  - docker-compose -f stacks/photoshow/photoshow.compose.yml up -d;
   #- docker-compose -f stacks/hass/hass.compose.yml up -d;
-  #- docker-compose -f stacks/pihole/pihole.compose.yml up -d;
+  - docker-compose -f stacks/pihole/pihole.compose.yml up -d;
   #- docker-compose -f stacks/docker-pxe/.travis.yml up -d;
   #- docker-compose -f stacks/phpbb/phpbb.compose.yml up -d;
   #- docker-compose -f stacks/akaunting/example.compose.yml up -d;
-  #- docker-compose -f stacks/ombi/ombi.compose.yml up -d;
-  #- docker-compose -f stacks/mosquitto/mosquitto.compose.yml up -d;
-  #- docker-compose -f stacks/teamspeak/example.compose.yml up -d;
+  - docker-compose -f stacks/ombi/ombi.compose.yml up -d;
+  - docker-compose -f stacks/mosquitto/mosquitto.compose.yml up -d;
+  - docker-compose -f stacks/teamspeak/example.compose.yml up -d;
   #- docker-compose -f stacks/flexget/flexget.compose.yml up -d; 
-  #- docker-compose -f stacks/cloud9/cloud9.compose.yml up -d;
+  - docker-compose -f stacks/cloud9/cloud9.compose.yml up -d;
   #- docker-compose -f stacks/nodered/nodered.compose.yml up -d;
-  #- docker-compose -f stacks/nextcloud/nextcloud.compose.yml up -d;		
+  - docker-compose -f stacks/nextcloud/nextcloud.compose.yml up -d;		
   #- docker-compose -f stacks/gitlab/gitlab.compose.yml up -d;
-  #- docker-compose -f stacks/bazarr/bazarr.compose.yml up -d;
+  - docker-compose -f stacks/bazarr/bazarr.compose.yml up -d;
 
   - docker ps -a
 
 after_script:
   - docker-compose -f stacks/webpage-compose.yml down;
+  #- docker-compose -f stacks/openvpn/vpn.compose.yml down;
   #- docker-compose -f stacks/lancache/lancache.compose.yml down;
-  #- docker-compose -f stacks/sonarr/sonarr.compose.yml down;
-  #- docker-compose -f stacks/monitoring/example.compose.yml down;
-  #- docker-compose -f stacks/calibre/calibre.compose.yml down;
-  #- docker-compose -f stacks/lidarr/lidarr.compose.yml down;
-  #- docker-compose -f stacks/plex/plex.compose.yml down;
-  #- docker-compose -f stacks/transmission/transmission.compose.yml down;
-  #- docker-compose -f stacks/urbackup/urbackup.compose.yml down;
+  - docker-compose -f stacks/sonarr/sonarr.compose.yml down;
+  - docker-compose -f stacks/monitoring/example.compose.yml down;
+  - docker-compose -f stacks/calibre/calibre.compose.yml down;
+  - docker-compose -f stacks/lidarr/lidarr.compose.yml down;
+  - docker-compose -f stacks/plex/plex.compose.yml down;
+  - docker-compose -f stacks/transmission/transmission.compose.yml down;
+  - docker-compose -f stacks/urbackup/urbackup.compose.yml down;
   #- docker-compose -f stacks/mediawiki/mediawiki.compose.yml down;
   #- docker-compose -f stacks/nodejs/nodejs.compose.yml down;
   #- docker-compose -f stacks/compose/rpi4.compose.yml down;
@@ -72,29 +73,26 @@ after_script:
   #- docker-compose -f stacks/compose/blackhole.compose.yml down;
   #- docker-compose -f stacks/compose/newlab.compose.yml down;
   #- docker-compose -f stacks/compose/mercury.compose.yml down;
-  #- docker-compose -f stacks/radarr/radarr.compose.yml down;
+  - docker-compose -f stacks/radarr/radarr.compose.yml down;
   #- docker-compose -f stacks/deluge/deluge.compose.yml down;
-  #- docker-compose -f stacks/photoshow/photoshow.compose.yml down;
+  - docker-compose -f stacks/photoshow/photoshow.compose.yml down;
   #- docker-compose -f stacks/hass/hass.compose.yml down;
-  #- docker-compose -f stacks/pihole/pihole.compose.yml down;
+  - docker-compose -f stacks/pihole/pihole.compose.yml down;
   #- docker-compose -f stacks/docker-pxe/.travis.yml down;
   #- docker-compose -f stacks/phpbb/phpbb.compose.yml down;
   #- docker-compose -f stacks/akaunting/example.compose.yml down;
-  #- docker-compose -f stacks/ombi/ombi.compose.yml down;
-  #- docker-compose -f stacks/mosquitto/mosquitto.compose.yml down;
-  #- docker-compose -f stacks/teamspeak/example.compose.yml down;
+  - docker-compose -f stacks/ombi/ombi.compose.yml down;
+  - docker-compose -f stacks/mosquitto/mosquitto.compose.yml down;
+  - docker-compose -f stacks/teamspeak/example.compose.yml down;
   #- docker-compose -f stacks/flexget/flexget.compose.yml down;
-  #- docker-compose -f stacks/cloud9/cloud9.compose.yml down;
+  - docker-compose -f stacks/cloud9/cloud9.compose.yml down;
   #- docker-compose -f stacks/nodered/nodered.compose.yml down;
-  #- docker-compose -f stacks/nextcloud/nextcloud.compose.yml down;
+  - docker-compose -f stacks/nextcloud/nextcloud.compose.yml down;
   #- docker-compose -f stacks/gitlab/gitlab.compose.yml down;
-  #- docker-compose -f stacks/bazarr/bazarr.compose.yml down;
+  - docker-compose -f stacks/bazarr/bazarr.compose.yml down;
 
   - docker ps -a
 
-  #- docker-compose -f stacks/openvpn/vpn.compose.yml down;
-  #- docker-compose -f stacks/urbackup/urbackup.compose.yml down;
-  #- docker-compose -f stacks/gitlab/gitlab.compose.yml down;
   # You may want to update this to whatever the latest version is, or keep it
   # the same as your local machines. However, I have only tested it with 1.8.0+.
   # There should be a time in the future when this is not necessary - it is
