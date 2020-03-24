@@ -2,9 +2,9 @@ version: "2"
 services:
   db:
     container_name: webpage-db
-    image: mariadb
+    #image: mariadb
     #image: hypriot/rpi-mysql:latest
-    #image: jsurf/rpi-mariadb:latest
+    image: jsurf/rpi-mariadb:latest
     command: --default-authentication-plugin=mysql_native_password
     restart: unless-stopped
     environment:
