@@ -1,8 +1,9 @@
 version: '2'
 services:
   gitlab:
+    container_name: gitlab
     image: 'gitlab/gitlab-ce:latest'
-    restart: always
+    restart: unless-stopped
     hostname: 'gitlab.example.com'
     environment:
       GITLAB_OMNIBUS_CONFIG: |
