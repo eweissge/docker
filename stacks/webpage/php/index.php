@@ -32,21 +32,20 @@
     		Eventually I will be posting my resume and some other biographical information for your reading
     		pleasure, so stay tuned.
       </p>
-      <!--
+<!--
       <p>
         Disclaimer: I, in no way, authorize illegal distribution of copyrighted material.  Files that you find here
 		    are only a proof of concept of autoindexing of filepaths and in no way, are meant to enable illegal distribution.
 		    I am not responsible for the actions of the users of this site.
       </p>
-      -->
-<!--
-	  <p>
-	  <center>
-	  <a href="Recent.Downloads/">Recent Downloads</a> | <a href="Software/">Software</a> | <a href="Games/">Games</a> |
-	  <a href="Movies/">Movies</a> | <a href="Classics/">Classic Movies</a> | <a href="tv/">TV</a> |
-	  <a href="Music/">Music</a> | <a href="Classic.TV/">Classic TV</a> | <a href="Star.Trek/">Star Trek</a>
-	  </center>
-	  </p>
+
+	    <p>
+	      <center>
+	      <a href="Recent.Downloads/">Recent Downloads</a> | <a href="Software/">Software</a> | <a href="Games/">Games</a> |
+	      <a href="Movies/">Movies</a> | <a href="Classics/">Classic Movies</a> | <a href="tv/">TV</a> |
+	      <a href="Music/">Music</a> | <a href="Classic.TV/">Classic TV</a> | <a href="Star.Trek/">Star Trek</a>
+	      </center>
+	    </p>
 -->
     </div>
 
@@ -61,7 +60,7 @@
 		      and qualifications <a target="_blank" href="/pdf/resume2018.pdf">here</a>.
         </p>
         <p>
-		      I enjoy astronomy, physics, debate, new technology, science fiction and wild theories.
+		      I enjoy astronomy, physics, debate, new technology, science fiction and video games.
 		      I'm very technology saavy and enjoy learning everything I possibly can.  I do my best to
           stay on top of emerging hardware, architecture, virtualization, networking technology,
           search algorithms, data storage structures, and
@@ -78,7 +77,8 @@
           I'm currently doing a lot of work with Docker and Docker-compose to deploy stacks of containers
           during deployments to my environments.  All I have to do next is setup a webhook from travis
           to automatically deploy my code and change the active color and I will have a complete CI/CD 
-          environment.
+          environment.  At the same time, I'm testing Gitlab / Kubernetes CI/CD pipeline using a dockerized
+          <a href="https://about.gitlab.com/">Gitlab</a> instance and <a href="https://kubernetes.io/docs/home/">MiniKube</a>.
         </p>
       </div>
 
@@ -116,7 +116,7 @@
 	      <p>Now using nginx instead of Apache2</p>
         <div class="section_header">
           <div id="bugs"></div>
-                Reporting Problems
+            Reporting Problems
         </div>
         <div class="content_section_text">
           <p>
