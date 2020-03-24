@@ -5,7 +5,7 @@ services:
     container_name: portainer
     restart: unless-stopped
     env_file:
-      - ./.monitoring.env
+      - /opt/docker/stacks/monitoring/.monitoring.env
     command: --admin-password-file '/tmp/.portainer.creds'
     ports:
       - 9999:9000
