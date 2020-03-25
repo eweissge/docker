@@ -27,7 +27,7 @@ services:
       TZ: "America/Detroit"
     build:
       context: .
-      dockerfile: /opt/docker/stacks/php/Dockerfile
+      dockerfile: ./php/Dockerfile
     volumes:
       - /opt/docker/stacks/webpage:/usr/share/nginx/html
 

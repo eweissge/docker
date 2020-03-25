@@ -19,7 +19,7 @@ before_script:
 
 
 script:
-  - docker-compose -f stacks/webpage-compose.yml up -d;
+  - docker-compose -f stacks/webpage-compose.yml up -d --build;
   #- docker-compose -f stacks/openvpn/vpn.compose.yml up -d;
   #- docker-compose -f stacks/lancache/lancache.compose.yml up -d;
   #- docker-compose -f stacks/sonarr/sonarr.compose.yml up -d;
