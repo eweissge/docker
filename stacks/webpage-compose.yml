@@ -39,8 +39,9 @@ services:
       TZ: "America/Detroit"
     ports:
       - 81:80
+    # Added paths relative to repo, otherwise travis build fails
     volumes:
-      - /opt/docker/stacks/webpage:/usr/share/nginx/html
-      - /opt/docker/stacks/nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf
+      - ./webpage:/usr/share/nginx/html
+      - ./nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf
     links:
       -  php
