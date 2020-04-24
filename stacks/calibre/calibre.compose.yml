@@ -8,13 +8,10 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=America/Detroit
-#      - GUAC_USER=abc #optional
-#      - GUAC_PASS=900150983cd24fb0d6963f7d28e17f72 #optional
+      - GUAC_USER=abc #optional
+      - GUAC_PASS=900150983cd24fb0d6963f7d28e17f72 #optional
     volumes:
       - /opt/docker/volumes/calibre/config:/config
       - /media/orion/Seagate3.0/Repo/Documents/Books/epub.library:/books
     ports:
-      #- 8080:8080
-      #- 8081:8081
       - 8083:8083
-      #- 8084:8081

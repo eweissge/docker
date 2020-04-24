@@ -11,8 +11,6 @@ services:
       - UMASK_SET=022 #optional
     volumes:
       - /opt/docker/volumes/bazarr/config:/config
-      #- /home/eric/docker/volumes/bazarr/movies:/movies
-      #- /home/eric/docker/volumes/bazarr/tv:/tv
       - /media/orion/Tosh3.0/Movies:/movies
       - /media/orion/Tosh3.0/TV:/tv
       - /media/orion/Jupiter/archive.tv:/tv.archive
