@@ -15,7 +15,7 @@ services:
       - /media/orion/Venus/downloads:/downloads
       - /opt/docker/volumes/transmission/watch:/watch
     ports:
-      #- 9091:9091
-      - 9090:9091
+      - 9091:9091
+      #- 9090:9091
       - 51413:51413
       - 51413:51413/udp
