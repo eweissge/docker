@@ -12,10 +12,11 @@ services:
     volumes:
       - /opt/docker/volumes/transmission/config:/config
       #- /opt/docker/volumes/transmission/downloads:/downloads
-      - /media/orion/Venus/downloads:/downloads
+      #- /media/orion/Venus/downloads:/downloads
+      - /media/eric/downloads/home/eric/Downloads:/downloads
       - /opt/docker/volumes/transmission/watch:/watch
     ports:
       - 9091:9091
       #- 9090:9091
-      - 51413:51413
-      - 51413:51413/udp
+      #- 51413:51413
+      #- 51413:51413/udp
