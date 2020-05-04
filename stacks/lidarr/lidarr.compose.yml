@@ -10,7 +10,7 @@ services:
       - TZ=America/Detroit
       - UMASK_SET=022 #optional
     volumes:
-      - /home/eric/docker/volumes/lidarr/config:/config
+      - /opt/docker/volumes/lidarr/config:/config
       - /media/orion/Jupiter/FLAC:/music
       - /media/orion/Venus/downloads:/downloads
     ports:
