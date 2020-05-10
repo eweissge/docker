@@ -11,10 +11,10 @@ services:
       - UMASK_SET=022 #optional
     volumes:
       - /opt/docker/volumes/bazarr/config:/config
-      - /media/orion/Tosh3.0/Movies:/movies
-      - /media/orion/Tosh3.0/TV:/tv
-      - /media/orion/Jupiter/archive.tv:/tv.archive
-      - /media/orion/Seagate3.0/Classic.tv:/tv.classic
-      - /media/orion/Seagate3.0/Classics:/movies.classics    
+      - /media/orion/Titan/Movies:/movies
+      - /media/orion/Titan/Classics:/movies.classics    
+      - /media/orion/ColdSto/TV:/tv
+      - /media/orion/ColdSto/archive.tv:/tv.archive
+      - /media/orion/ColdSto/Classic.tv:/tv.classic
     ports:
       - 6767:6767

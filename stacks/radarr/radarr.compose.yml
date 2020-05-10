@@ -11,10 +11,8 @@ services:
       - UMASK_SET=022 #optional
     volumes:
       - /opt/docker/volumes/radarr/config:/config
-      - /media/orion/Tosh3.0/Movies:/movies
-      - /media/orion/Seagate3.0/Classics:/movies.classics
-      - /media/orion/Venus/downloads:/downloads
-      #- /opt/docker/volumes/radarr/movies:/movies
-      #- /opt/docker/volumes/radarr/downloads:/downloads
+      - /media/orion/Titan/Movies:/movies
+      - /media/orion/Titan/Classics:/movies.classics
+      - /media/accretion/Downloads:/downloads
     ports:
       - 7878:7878

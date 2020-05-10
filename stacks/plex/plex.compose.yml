@@ -17,5 +17,6 @@ services:
       - /media/orion/ColdSto/archive.tv:/data/tv.archive
       - /media/orion/ColdSto/TV:/data/tv
       - /media/orion/ColdSto/Classic.tv:/data/tv.classic
+      - /media/orion/Jupiter/FLAC:/data/music
     ports:
       - 32400:32400

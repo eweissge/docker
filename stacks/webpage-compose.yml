@@ -10,7 +10,10 @@ services:
       TZ: "America/Detroit"
     command: --init-file /data/application/init.sql
     volumes:
-      - /opt/docker/stacks/sql/init.sql:/data/application/init.sql
+      - /home/eric/.secure/init.sql:/data/application/init.sql
+      #- /opt/docker/stacks/sql/init.sql:/data/application/init.sql
+    ports:
+      - 3307:3306
 
   adminer:
     container_name: adminer
