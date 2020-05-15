@@ -9,8 +9,8 @@ services:
       - PGID=1000
       - TZ=America/Detroit
     volumes:
-      - /home/eric/docker/volumes/photoshow/config:/config
-      - /home/eric/docker/volumes/photoshow/pictures:/Pictures:ro
-      - /home/eric/docker/volumes/photoshow/Thumbs:/Thumbs
+      - /opt/docker/volumes/photoshow/config:/config
+      - /opt/docker/volumes/photoshow/pictures:/Pictures:ro
+      - /opt/docker/volumes/photoshow/Thumbs:/Thumbs
     ports:
-      - 80:80
+      - 8383:80
